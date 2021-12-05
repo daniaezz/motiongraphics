@@ -6,21 +6,47 @@ body{
   align-items: center;
   min-height: 100vh;
   background-color: #27476E;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 a{
   user-select: none;
 }
 
-.wrapper{
+.everything{
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cubes{
+  position: absolute;
   width: 40em;
   height: 30em;
   display: grid;
   align-items: center;
   justify-self: center;
   text-align: center;
+}
+
+.text{
+  display: grid;
+  width: 40em;
+  height: 40em;
+  position: absolute;
+  z-index: 2;
+  font-size: 18px;
+}
+
+.ass1{
+  /* top:0px; */
+  /* left: 0px; */
+  text-align: left;
+  align-items: center;
 }
 
 .circle{
@@ -175,7 +201,7 @@ a{
   transform: rotate3d(0, 0, 0, 90deg);
   transition: 0.5s;
   /* animation-iteration-count: infin; */
-  animation-duration: 4s;
+  /* animation-duration: 4s; */
   animation-fill-mode: forwards;
   animation: cubest 4s, constantst 6s 4s infinite;
 }
@@ -183,23 +209,26 @@ a{
 #cubend{
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
-  animation-duration: 4s;
+  /* animation-duration: 4s; */
   animation-fill-mode: forwards;
+  animation: cubend 4s, constantnd 6s 4s infinite;
 }
 
 #cuberd{
   transform: rotate3d(0, 0, 0, 90deg);
 
   /* animation-iteration-count: infin; */
-  animation-duration: 2.75s;
+  /* animation-duration: 2.75s; */
   animation-fill-mode: forwards;
+  animation: cuberd 2.75s, constantrd 6s 2.75s infinite;
 }
 
 #cubeth{
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
-  animation-duration: 2.75s;
+  /* animation-duration: 2.75s; */
   animation-fill-mode: forwards;
+  animation: cubeth 2.75s, constantth 6s 2.75s infinite;
 }
 
 @keyframes cubest {
@@ -213,21 +242,21 @@ a{
   0%    {transform: rotate3d(0, 2, 0, 290deg);}
   25%   {transform: rotate3d(1, 1, 2, 150deg);}
   50%   {transform: rotate3d(1, 2, 1, 20deg);}
-  100%  {transform: rotate3d(2, 1, 1, 330deg);}
+  100%  {transform: rotate3d(1, 2, 1, 330deg);}
 }
 
 @keyframes cuberd {
-  0%    {transform: rotate3d(0, 0, 0, 80deg);}
-  25%   {transform: rotate3d(2, 1, 1, 150deg);}
-  50%   {transform: rotate3d(1, 2, 1, 320deg);}
-  100%  {transform: rotate3d(1, 2, 1, 230deg);}
+  0%    {transform: rotate3d(0, 0, 0, -80deg);}
+  25%   {transform: rotate3d(2, 1, 1, -150deg);}
+  50%   {transform: rotate3d(1, 2, 1, -320deg);}
+  100%  {transform: rotate3d(1, 2, 1, -230deg);}
 }
 
 @keyframes cubeth {
-  0%    {transform: rotate3d(0, 0, 0, 350deg);}
-  25%   {transform: rotate3d(1, 2, 1, 40deg);}
-  50%   {transform: rotate3d(1, 1, 2, 340deg);}
-  100%  {transform: rotate3d(2, 1, 1, 270deg);}
+  0%    {transform: rotate3d(0, 0, 0, -350deg);}
+  25%   {transform: rotate3d(1, 2, 1, -40deg);}
+  50%   {transform: rotate3d(1, 1, 2, -340deg);}
+  100%  {transform: rotate3d(2, 1, 1, -270deg);}
 }
 
 /* constant first */
@@ -240,28 +269,74 @@ a{
   100%  {transform: rotate3d(1, 1, 1, 530deg);}
 }
 
+@keyframes constantnd {
+  0%    {transform: rotate3d(1, 2, 1, 330deg);}
+  20%   {transform: rotate3d(1, 2, 1, 402deg);}
+  40%   {transform: rotate3d(1, 2, 1, 474deg);}
+  60%   {transform: rotate3d(1, 2, 1, 546deg);}
+  80%   {transform: rotate3d(1, 2, 1, 618deg);}
+  100%  {transform: rotate3d(1, 2, 1, 690deg);}
+}
+
+@keyframes constantrd {
+  0%    {transform: rotate3d(1, 2, 1, -230deg);}
+  20%   {transform: rotate3d(1, 2, 1, -302deg);}
+  40%   {transform: rotate3d(1, 2, 1, -374deg);}
+  60%   {transform: rotate3d(1, 2, 1, -446deg);}
+  80%   {transform: rotate3d(1, 2, 1, -518deg);}
+  100%  {transform: rotate3d(1, 2, 1, -590deg);}
+}
+
+@keyframes constantth {
+  0%    {transform: rotate3d(2, 1, 1, -270deg);}
+  20%   {transform: rotate3d(2, 1, 1, -342deg);}
+  40%   {transform: rotate3d(2, 1, 1, -414deg);}
+  60%   {transform: rotate3d(2, 1, 1, -486deg);}
+  80%   {transform: rotate3d(2, 1, 1, -558deg);}
+  100%  {transform: rotate3d(2, 1, 1, -630deg);}
+}
+
+
 /* #cubest:hover{
   animation-play-state: paused;
   transform: rotate3d(0,0,0, 0deg);
 } */
 #circle2{
     visibility: hidden;
-    animation-duration: 4s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 
 #circle{
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   overflow: hidden;
 }
 
 @keyframes extendBg {
   0% {background-color: white; transform: scale(1.5);  z-index: -10;}
-  100%  {background-color: #EF7A85; transform: scale(100); z-index: -10;}
+  100%  {background-color: #EF7A85; transform: scale(15); z-index: -10;}
 }
 
 @keyframes circle2Anim {
   0% {background-color: white;}
   100% {background-color: #27476E;}
+}
+
+@keyframes circleBack {
+  0%  {background-color: #27476E;}
+  100%  {background-color: white;}
+}
+
+@keyframes bgBack {
+  0%   {background-color: #EF7A85; transform: scale(15); z-index: -10;}
+  100% {background-color: white; transform: scale(0.1);  z-index: -10;}
+
+}
+
+.scroll{
+  overflow: scroll;
+  height: 600px;
+  position: static;
+  width: inherit;
 }
