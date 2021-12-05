@@ -13,11 +13,9 @@ circle.addEventListener("mouseover", ()=>{
   cubend.style.visibility = "visible";
   cuberd.style.visibility = "visible";
   cubeth.style.visibility = "visible";
-  // $(".containernd").css("justify-self", "right");
+
   document.getElementById("containerst").style.animationName = "first";
   document.getElementById("containernd").style.animationName = "second";
-  // cubest.style.animationName ="cubest"
-  cubend.style.animationName ="cubend"
 
   setTimeout(()=>{
     document.getElementById("containerst").style.transform = "scale(1)";
@@ -27,8 +25,6 @@ circle.addEventListener("mouseover", ()=>{
   setTimeout( ()=>{
     document.getElementById("containerrd").style.animationName = "third";
     document.getElementById("containerth").style.animationName = "fourth";
-    cuberd.style.animationName ="cuberd"
-    cubeth.style.animationName ="cubeth"
     document.getElementById("containerrd").style.transform = "scale(1)";
     document.getElementById("containerth").style.transform = "scale(1)";
   },1250);
@@ -62,21 +58,22 @@ circle.addEventListener("mouseout", ()=>{
 // });
 
 
+//this is not useless do not change this !!!!!!
+
 circle.addEventListener("dblclick", ()=>{
   if (bgColour<1){
     document.getElementById("circle2").style.visibility="visible";
     document.getElementById("circle2").style.animationName = "extendBg";
     circle.style.animationName="circle2Anim";
+    body.style.overflow ="hidden";
     bgColour = 1;
   }
   else{
-    document.getElementById("circle2").style.animationDirection = "reverse";
-    document.getElementById("circle2").style.animationName = "extendBg";
+    document.getElementById("circle2").style.animationName = "bgBack";
+    // document.getElementById("circle2").style.animationDuration = "0.8s";
     setTimeout(()=>{
-      document.getElementById("circle2").style.transform="scale(0)"
-    }, 3700);
-
-
+      circle.style.animationName = "circleBack";
+    },200);
     bgColour =0;
   }
 });
