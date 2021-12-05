@@ -1,0 +1,267 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #27476E;
+  overflow: hidden;
+}
+
+a{
+  user-select: none;
+}
+
+.wrapper{
+  position: relative;
+  width: 40em;
+  height: 30em;
+  display: grid;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.circle{
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  align-content: center;
+  justify-self: center;
+  position: absolute;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+
+
+/* cube starts */
+
+.cube{
+  transform-style: preserve-3d;
+  transition: 0.4s;
+  transform-origin: 3em 3em;
+  position: relative;
+  width: 6em;
+  height: 6em;
+  display: grid;
+  visibility: hidden;
+  transform: rotate3d(1, 1, 1, 90deg);
+  /* transform: scale(0.1); */
+}
+
+.one{
+  transform: translate3d(0, 0, 3em);
+  background-color: #C82D54;
+}
+
+.two{
+  transform: rotateX(90deg) translate3d(0, 3em, 0);
+  transform-origin: bottom;
+  background-color: #FFDAC1;
+}
+
+.three{
+  transform: rotateY(90deg) translate3d(-3em, 0, 0);
+  transform-origin: left;
+  background-color: #B5EAD7;
+}
+
+.four{
+  transform: rotateX(-90deg) translate3d(0, -3em, 0);
+  transform-origin: top;
+  background-color: #FFF585;
+}
+
+.five{
+  transform: rotateY(-90deg) translate3d(3em, 0, 0);
+  transform-origin: right;
+  background-color: #213659;
+}
+
+.six{
+  transform: translate3d(0, 0, -3em);
+  background-color: #ffb7b2;
+}
+
+.face{
+  width: 6em;
+  height: 6em;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  align-content: center;
+  justify-self: center;
+  text-align: center;
+  font-family: sans-serif;
+  opacity: 100%;
+  user-select: none;
+}
+
+.containerst{
+  display: grid;
+  left: 200px;
+  transform: scale(0);
+  transition: 0.5s;
+  position: absolute;
+  /* animation-name: first; */
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.containernd{
+  display: grid;
+  right: 0px;
+  position: absolute;
+  transform: scale(0);
+  transition: 0.5s;
+  /* animation-name: second; */
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.containerrd{
+  display: grid;
+  left: 0px;
+  position: absolute;
+  transform: scale(0);
+  transition: 0.5s;
+  /* animation-name: third; */
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+}
+
+.containerth{
+  display: grid;
+  right: 0px;
+  position: absolute;
+  transform: scale(0);
+  transition: 0.5s;
+  /* animation-name: fourth; */
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  /* transform: rotate3d(1, 1, 1, 90deg) */
+}
+
+@keyframes first {
+  0%    {left: 200px;}
+  50%   {left: 0px; top: 40%;}
+  100%  {left: 0px; top:0px;}
+}
+
+@keyframes second {
+  0%    {right: 200px;}
+  50%   {right: 0px; bottom: 39%;}
+  100%  {right:0px; bottom:0;}
+}
+
+@keyframes third {
+  0%    {left: 0px; bottom: 39%;}
+  100%  {left:0px; bottom:0px;}
+}
+
+@keyframes fourth {
+  0%    {right: 0px; top: 40%;}
+  100%  {right: 0px; top:0px;}
+}
+
+/* cube and cube rotations */
+
+#cubest{
+  transform: rotate3d(0, 0, 0, 90deg);
+  transition: 0.5s;
+  /* animation-iteration-count: infin; */
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation: cubest 4s, constantst 6s 4s infinite;
+}
+
+#cubend{
+  transform: rotate3d(0, 0, 0, 90deg);
+  /* animation-iteration-count: infin; */
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+#cuberd{
+  transform: rotate3d(0, 0, 0, 90deg);
+
+  /* animation-iteration-count: infin; */
+  animation-duration: 2.75s;
+  animation-fill-mode: forwards;
+}
+
+#cubeth{
+  transform: rotate3d(0, 0, 0, 90deg);
+  /* animation-iteration-count: infin; */
+  animation-duration: 2.75s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cubest {
+  0%    {transform: rotate3d(0, 0, 0, 10deg);}
+  25%   {transform: rotate3d(1, 1, 1, 345deg);}
+  50%   {transform: rotate3d(1, 1, 1, 40deg);}
+  100%  {transform: rotate3d(1, 1, 1, 170deg);}
+}
+
+@keyframes cubend {
+  0%    {transform: rotate3d(0, 2, 0, 290deg);}
+  25%   {transform: rotate3d(1, 1, 2, 150deg);}
+  50%   {transform: rotate3d(1, 2, 1, 20deg);}
+  100%  {transform: rotate3d(2, 1, 1, 330deg);}
+}
+
+@keyframes cuberd {
+  0%    {transform: rotate3d(0, 0, 0, 80deg);}
+  25%   {transform: rotate3d(2, 1, 1, 150deg);}
+  50%   {transform: rotate3d(1, 2, 1, 320deg);}
+  100%  {transform: rotate3d(1, 2, 1, 230deg);}
+}
+
+@keyframes cubeth {
+  0%    {transform: rotate3d(0, 0, 0, 350deg);}
+  25%   {transform: rotate3d(1, 2, 1, 40deg);}
+  50%   {transform: rotate3d(1, 1, 2, 340deg);}
+  100%  {transform: rotate3d(2, 1, 1, 270deg);}
+}
+
+/* constant first */
+@keyframes constantst {
+  0%    {transform: rotate3d(1, 1, 1, 170deg);}
+  20%   {transform: rotate3d(1, 1, 1, 242deg);}
+  40%   {transform: rotate3d(1, 1, 1, 314deg);}
+  60%   {transform: rotate3d(1, 1, 1, 386deg);}
+  80%   {transform: rotate3d(1, 1, 1, 458deg);}
+  100%  {transform: rotate3d(1, 1, 1, 530deg);}
+}
+
+/* #cubest:hover{
+  animation-play-state: paused;
+  transform: rotate3d(0,0,0, 0deg);
+} */
+#circle2{
+    visibility: hidden;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+#circle{
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes extendBg {
+  0% {background-color: white; transform: scale(1.5);  z-index: -10;}
+  100%  {background-color: #EF7A85; transform: scale(100); z-index: -10;}
+}
+
+@keyframes circle2Anim {
+  0% {background-color: white;}
+  100% {background-color: #27476E;}
+}
