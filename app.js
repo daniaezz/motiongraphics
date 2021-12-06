@@ -5,9 +5,15 @@ let cuberd = document.getElementById("cuberd");
 let cubeth = document.getElementById("cubeth");
 let body = document.querySelector("body");
 var bgColour = 0;
+var aniColour = 0;
 
 circle.addEventListener("mouseover", ()=>{
+  setTimeout( ()=>{
+    aniColour = 1;
+  },2500);
+
   circle.style.transform = "scale(1.5)"
+  body.style.overflow="visible";
 
   cubest.style.visibility = "visible";
   cubend.style.visibility = "visible";
@@ -16,7 +22,7 @@ circle.addEventListener("mouseover", ()=>{
 
   document.getElementById("containerst").style.animationName = "first";
   document.getElementById("containernd").style.animationName = "second";
-
+  // cubest.style.animationName = "cubest";
   setTimeout(()=>{
     document.getElementById("containerst").style.transform = "scale(1)";
     document.getElementById("containernd").style.transform = "scale(1)";
@@ -33,6 +39,7 @@ circle.addEventListener("mouseover", ()=>{
 
 circle.addEventListener("mouseout", ()=>{
   circle.style.transform = "none";
+  console.log(aniColour)
 });
 
 // cubest.addEventListener("mouseover",()=>{
@@ -60,24 +67,65 @@ circle.addEventListener("mouseout", ()=>{
 
 //this is not useless do not change this !!!!!!
 
-circle.addEventListener("dblclick", ()=>{
-  if (bgColour<1){
+circle.addEventListener("click", ()=>{
+  if (bgColour<1 && aniColour>0){
     document.getElementById("circle2").style.visibility="visible";
     document.getElementById("circle2").style.animationName = "extendBg";
     circle.style.animationName="circle2Anim";
-    body.style.overflow ="hidden";
+    // body.style.overflow ="hidden";
     bgColour = 1;
   }
-  else{
+  else if (bgColour>0){
     document.getElementById("circle2").style.animationName = "bgBack";
     // document.getElementById("circle2").style.animationDuration = "0.8s";
     setTimeout(()=>{
       circle.style.animationName = "circleBack";
     },200);
+
+    setTimeout(()=>{
+      document.getElementById("circle2").style.visibility="hidden";
+    }, 201);
     bgColour =0;
-  }
+}
 });
 
 // cubest.addEventListener("mouseout", ()=>{
 //   cubest.style.animationPlayState = "running";
 // });
+
+
+
+// add a var that changes when the animation that plays at the begining ends and make a condition so that the scroll animation only works when the first animation ended.
+
+window.addEventListener("scroll", ()=>{
+  if (aniColour>0){
+
+      body.style.overflow="hidden";
+      document.getElementById("containerst").style.animationName = "downst";
+      document.getElementById("containerst").style.animationDuration = "0.8s";
+      document.getElementById("containerst").style.animationFillMode = "forwards";
+      document.getElementById("containerst").style.animationTimingFunction = "ease-in";
+
+      document.getElementById("containerth").style.animationName = "downth";
+      document.getElementById("containerth").style.animationDuration = "0.8s";
+      document.getElementById("containerth").style.animationFillMode = "forwards";
+      document.getElementById("containerth").style.animationTimingFunction = "ease-in";
+
+      document.getElementById("containerrd").style.animationName = "downrd";
+      document.getElementById("containerrd").style.animationDuration = "1s";
+      document.getElementById("containerrd").style.animationFillMode = "forwards";
+      document.getElementById("containerrd").style.animationTimingFunction = "ease-in";
+
+      document.getElementById("containernd").style.animationName = "downnd";
+      document.getElementById("containernd").style.animationDuration = "1s";
+      document.getElementById("containernd").style.animationFillMode = "forwards";
+      document.getElementById("containernd").style.animationTimingFunction = "ease-in";
+
+      circle.style.animationDuration = "0.7s";
+      document.getElementById("circle2").style.animationDuration = "0.7s";
+      // circle.style.animationDelay = "0.s"
+      document.getElementById("circle2").style.animationName ="about2";
+      circle.style.animationName = "about";
+
+    }
+});
