@@ -7,9 +7,23 @@ let body = document.querySelector("body");
 var bgColour = 0;
 var aniColour = 0;
 
+let containerst = document.getElementById("containerst")
+let containernd = document.getElementById("containernd")
+let containerrd = document.getElementById("containerrd")
+let containerth = document.getElementById("containerth")
+
+
 circle.addEventListener("mouseover", ()=>{
+  if (aniColour<1){
   setTimeout( ()=>{
     aniColour = 1;
+    document.getElementById("circle3").style.animationName = "shadow";
+    document.getElementById("projects").style.visibility = "visible";
+    document.getElementById("skrol").style.visibility = "visible";
+    document.getElementById("skrolText").style.visibility = "visible";
+    document.getElementById("projects").style.animationName = "projects";
+    document.getElementById("skrol").style.animationName = "projects";
+    document.getElementById("skrolText").style.animationName = "projects";
   },2500);
 
   circle.style.transform = "scale(1.5)"
@@ -20,27 +34,155 @@ circle.addEventListener("mouseover", ()=>{
   cuberd.style.visibility = "visible";
   cubeth.style.visibility = "visible";
 
-  document.getElementById("containerst").style.animationName = "first";
-  document.getElementById("containernd").style.animationName = "second";
+  containerst.style.animationName = "first";
+  containernd.style.animationName = "second";
   // cubest.style.animationName = "cubest";
   setTimeout(()=>{
-    document.getElementById("containerst").style.transform = "scale(1)";
-    document.getElementById("containernd").style.transform = "scale(1)";
+    containerst.style.transform = "scale(1)";
+    containernd.style.transform = "scale(1)";
   },100);
 
   setTimeout( ()=>{
-    document.getElementById("containerrd").style.animationName = "third";
-    document.getElementById("containerth").style.animationName = "fourth";
-    document.getElementById("containerrd").style.transform = "scale(1)";
-    document.getElementById("containerth").style.transform = "scale(1)";
+    containerrd.style.animationName = "third";
+    containerth.style.animationName = "fourth";
+    containerrd.style.transform = "scale(1)";
+    containerth.style.transform = "scale(1)";
   },1250);
-
+  }
   });
 
 circle.addEventListener("mouseout", ()=>{
   circle.style.transform = "none";
   console.log(aniColour)
 });
+
+//this is not useless do not change this !!!!!!
+
+circle.addEventListener("click", ()=>{
+  if (bgColour<1 && aniColour>0){
+    document.getElementById("circle2").style.visibility="visible";
+    document.getElementById("circle2").style.animationName = "extendBg";
+    circle.style.animationName="circle2Anim";
+    document.getElementById("circle3").style.backgroundColor = "#27476E";
+    document.getElementById("projects").innerHTML = "D o c u m e n t a t i o n";
+    document.getElementById("amff").href = "https://github.com/daniaezz/Assignment1";
+    document.getElementById("acomix").href = "https://github.com/daniaezz/COMIX-STRIP";
+    document.getElementById("asound").href = "https://github.com/daniaezz/unusual";
+    document.getElementById("avideoh").href = "https://github.com/dweggyness/CommLab-Assignment4";
+    bgColour = 1;
+  }
+  else if (bgColour>0){
+    document.getElementById("projects").innerHTML = "P r o j e c t s";
+    document.getElementById("circle2").style.animationName = "bgBack";
+    document.getElementById("circle3").style.backgroundColor = "white";
+    // document.getElementById("circle2").style.animationDuration = "0.8s";
+    setTimeout(()=>{
+      circle.style.animationName = "circleBack";
+    },200);
+
+    setTimeout(()=>{
+      document.getElementById("circle2").style.visibility="hidden";
+    }, 201);
+    bgColour =0;
+}
+});
+
+// cubest.addEventListener("mouseout", ()=>{
+//   cubest.style.animationPlayState = "running";
+// });
+
+
+// add a var that changes when the animation that plays at the begining ends and make a condition so that the scroll animation only works when the first animation ended.
+
+window.addEventListener("scroll", ()=>{
+  if (aniColour>0){
+      document.getElementById("circle3").style.display = "none";
+      document.getElementById("projects").style.visibility = "hidden";
+      document.getElementById("spinny3d").style.visibility="visible";
+      // document.getElementById("bouncy").style.visibility = "visible";
+
+      body.style.overflow="hidden";
+      containerst.style.animationName = "downst";
+      containerst.style.animationDuration = "0.8s";
+      containerst.style.animationFillMode = "forwards";
+      containerst.style.animationTimingFunction = "ease-in";
+
+      containerth.style.animationName = "downth";
+      containerth.style.animationDuration = "0.8s";
+      containerth.style.animationFillMode = "forwards";
+      containerth.style.animationTimingFunction = "ease-in";
+
+      containerrd.style.animationName = "downrd";
+      containerrd.style.animationDuration = "1s";
+      containerrd.style.animationFillMode = "forwards";
+      containerrd.style.animationTimingFunction = "ease-in";
+
+      containernd.style.animationName = "downnd";
+      containernd.style.animationDuration = "1s";
+      containernd.style.animationFillMode = "forwards";
+      containernd.style.animationTimingFunction = "ease-in";
+
+      circle.style.animationDuration = "0.7s";
+      document.getElementById("circle2").style.animationDuration = "0.7s";
+      // circle.style.animationDelay = "0.s"
+      document.getElementById("circle2").style.animationName ="about2";
+      circle.style.animationName = "about";
+
+      document.getElementById("spinny3d").style.animationName="spinny";
+      // document.getElementById("bouncy").style.animationName="bouncy";
+      document.getElementById("aboutText").style.animationName="text";
+      setTimeout(()=>{
+        document.getElementById("aboutText").style.visibility="visible";
+      },500);
+      // document.getElementById("aboutText").style.visibility="visible";
+    }
+});
+
+
+containerst.addEventListener("mouseover", ()=>{
+  if (aniColour>0){
+    document.getElementById("mff").style.visibility="visible";
+  }
+});
+
+containerst.addEventListener("mouseout", ()=>{
+  document.getElementById("mff").style.visibility="hidden";
+});
+
+containernd.addEventListener("mouseover", ()=>{
+  if (aniColour>0){
+    document.getElementById("videoh").style.visibility="visible";
+  }
+});
+
+containernd.addEventListener("mouseout", ()=>{
+  document.getElementById("videoh").style.visibility="hidden";
+});
+
+containerrd.addEventListener("mouseover", ()=>{
+  if (aniColour>0){
+    document.getElementById("sound").style.visibility="visible";
+  }
+});
+
+containerrd.addEventListener("mouseout", ()=>{
+  document.getElementById("sound").style.visibility="hidden";
+});
+
+containerth.addEventListener("mouseover", ()=>{
+  if (aniColour>0){
+    document.getElementById("comix").style.visibility="visible";
+  }
+});
+
+containerth.addEventListener("mouseout", ()=>{
+  document.getElementById("comix").style.visibility="hidden";
+});
+
+
+//hehe omg its micheal jackson
+
+
 
 // cubest.addEventListener("mouseover",()=>{
 //   cubest.style.animationPlayState = "paused";
@@ -63,78 +205,3 @@ circle.addEventListener("mouseout", ()=>{
 //     });
 //   });
 // });
-
-
-//this is not useless do not change this !!!!!!
-
-circle.addEventListener("click", ()=>{
-  if (bgColour<1 && aniColour>0){
-    document.getElementById("circle2").style.visibility="visible";
-    document.getElementById("circle2").style.animationName = "extendBg";
-    circle.style.animationName="circle2Anim";
-    // body.style.overflow ="hidden";
-    bgColour = 1;
-  }
-  else if (bgColour>0){
-    document.getElementById("circle2").style.animationName = "bgBack";
-    // document.getElementById("circle2").style.animationDuration = "0.8s";
-    setTimeout(()=>{
-      circle.style.animationName = "circleBack";
-    },200);
-
-    setTimeout(()=>{
-      document.getElementById("circle2").style.visibility="hidden";
-    }, 201);
-    bgColour =0;
-}
-});
-
-// cubest.addEventListener("mouseout", ()=>{
-//   cubest.style.animationPlayState = "running";
-// });
-
-
-
-// add a var that changes when the animation that plays at the begining ends and make a condition so that the scroll animation only works when the first animation ended.
-
-window.addEventListener("scroll", ()=>{
-  if (aniColour>0){
-      document.getElementById("spinny3d").style.visibility="visible";
-      document.getElementById("bouncy").style.visibility = "visible";
-
-      body.style.overflow="hidden";
-      document.getElementById("containerst").style.animationName = "downst";
-      document.getElementById("containerst").style.animationDuration = "0.8s";
-      document.getElementById("containerst").style.animationFillMode = "forwards";
-      document.getElementById("containerst").style.animationTimingFunction = "ease-in";
-
-      document.getElementById("containerth").style.animationName = "downth";
-      document.getElementById("containerth").style.animationDuration = "0.8s";
-      document.getElementById("containerth").style.animationFillMode = "forwards";
-      document.getElementById("containerth").style.animationTimingFunction = "ease-in";
-
-      document.getElementById("containerrd").style.animationName = "downrd";
-      document.getElementById("containerrd").style.animationDuration = "1s";
-      document.getElementById("containerrd").style.animationFillMode = "forwards";
-      document.getElementById("containerrd").style.animationTimingFunction = "ease-in";
-
-      document.getElementById("containernd").style.animationName = "downnd";
-      document.getElementById("containernd").style.animationDuration = "1s";
-      document.getElementById("containernd").style.animationFillMode = "forwards";
-      document.getElementById("containernd").style.animationTimingFunction = "ease-in";
-
-      circle.style.animationDuration = "0.7s";
-      document.getElementById("circle2").style.animationDuration = "0.7s";
-      // circle.style.animationDelay = "0.s"
-      document.getElementById("circle2").style.animationName ="about2";
-      circle.style.animationName = "about";
-
-      document.getElementById("spinny3d").style.animationName="spinny";
-      document.getElementById("bouncy").style.animationName="bouncy";
-      document.getElementById("aboutText").style.animationName="text";
-      setTimeout(()=>{
-        document.getElementById("aboutText").style.visibility="visible";
-      },500);
-      // document.getElementById("aboutText").style.visibility="visible";
-    }
-});
