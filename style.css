@@ -265,37 +265,37 @@ a{
 /* constant first */
 @keyframes constantst {
   0%    {transform: rotate3d(1, 1, 1, 170deg);}
-  20%   {transform: rotate3d(1, 1, 1, 242deg);}
-  40%   {transform: rotate3d(1, 1, 1, 314deg);}
-  60%   {transform: rotate3d(1, 1, 1, 386deg);}
-  80%   {transform: rotate3d(1, 1, 1, 458deg);}
+  22%   {transform: rotate3d(1, 1, 1, 242deg);}
+  46%   {transform: rotate3d(1, 1, 1, 314deg);}
+  69%   {transform: rotate3d(1, 1, 1, 386deg);}
+  88%   {transform: rotate3d(1, 1, 1, 458deg);}
   100%  {transform: rotate3d(1, 1, 1, 530deg);}
 }
 
 @keyframes constantnd {
   0%    {transform: rotate3d(1, 2, 1, 330deg);}
-  20%   {transform: rotate3d(1, 2, 1, 402deg);}
-  40%   {transform: rotate3d(1, 2, 1, 474deg);}
-  60%   {transform: rotate3d(1, 2, 1, 546deg);}
-  80%   {transform: rotate3d(1, 2, 1, 618deg);}
+  23%   {transform: rotate3d(1, 2, 1, 402deg);}
+  44%   {transform: rotate3d(1, 2, 1, 474deg);}
+  66%   {transform: rotate3d(1, 2, 1, 546deg);}
+  87%   {transform: rotate3d(1, 2, 1, 618deg);}
   100%  {transform: rotate3d(1, 2, 1, 690deg);}
 }
 
 @keyframes constantrd {
   0%    {transform: rotate3d(1, 2, 1, -230deg);}
-  20%   {transform: rotate3d(1, 2, 1, -302deg);}
-  40%   {transform: rotate3d(1, 2, 1, -374deg);}
-  60%   {transform: rotate3d(1, 2, 1, -446deg);}
-  80%   {transform: rotate3d(1, 2, 1, -518deg);}
+  22%   {transform: rotate3d(1, 2, 1, -302deg);}
+  45%   {transform: rotate3d(1, 2, 1, -374deg);}
+  63%   {transform: rotate3d(1, 2, 1, -446deg);}
+  89%   {transform: rotate3d(1, 2, 1, -518deg);}
   100%  {transform: rotate3d(1, 2, 1, -590deg);}
 }
 
 @keyframes constantth {
   0%    {transform: rotate3d(2, 1, 1, -270deg);}
-  20%   {transform: rotate3d(2, 1, 1, -342deg);}
-  40%   {transform: rotate3d(2, 1, 1, -414deg);}
-  60%   {transform: rotate3d(2, 1, 1, -486deg);}
-  80%   {transform: rotate3d(2, 1, 1, -558deg);}
+  27%   {transform: rotate3d(2, 1, 1, -342deg);}
+  42%   {transform: rotate3d(2, 1, 1, -414deg);}
+  65%   {transform: rotate3d(2, 1, 1, -486deg);}
+  83%   {transform: rotate3d(2, 1, 1, -558deg);}
   100%  {transform: rotate3d(2, 1, 1, -630deg);}
 }
 
@@ -372,6 +372,119 @@ a{
   0%    {transform: translateY(0px); right:0px; bottom:0;}
   100%  {transform: translateY(900px); right:0; bottom:0;}
 }
+
+#spinny{
+  width: 15em;
+  height: 15em;
+  background-color: #92828D;
+  /* transform: rotate3d(0.1,0,1, 90deg); */
+  z-index: 4;
+  /* visibility: hidden; */
+  /* animation: spinny 3s; */
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+
+#spinny3d{
+    width: 15em;
+    height: 15em;
+    transform-style: preserve-3d;
+    transform-origin: 3em 3em;
+    transform:  translateY(-50em);
+    animation-duration: 0.7s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+@keyframes spinny {
+  0%    {transform: translateX(-16em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
+  /* 50%   {transform: translateX(-30em) translateY(8em) scale(0.5) rotateZ(90deg);} */
+
+  /* 80%   {transform: translateX(-20em) translateY(5em) rotateZ(270deg);} */
+  100%  {transform: translateX(-16em) translateY(10em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
+
+}
+
+.face2{
+  width: 15em;
+  height: 15em;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  align-content: center;
+  justify-self: center;
+  text-align: center;
+  font-family: sans-serif;
+  opacity: 100%;
+  user-select: none;
+}
+
+#bouncy{
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background-color: black;
+  transform: translateX(-30em) translateY(-30em);
+  animation-fill-mode: forwards;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.7s;
+  visibility: hidden;
+}
+
+@keyframes bouncy {
+  0%    {transform: translateX(-35em) translateY(-30em); height:6em; width: 5em;} /* up */
+  10%   {transform: translateX(-35em) translateY(0); height:5em; width: 6em;} /* down */
+  25%   {transform: translateX(-35em) translateY(-15em); height:6em; width: 5em;} /* up */
+  26%   {transform: translateX(-35em) translateY(-15em); height:5em; width: 5em;}/* up */
+  35%   {transform: translateX(-35em) translateY(0); height:5em;} /* down */
+  50%   {transform: translateX(-35em) translateY(-10em); height:6em; width: 5em;} /* up */
+  53%   {transform: translateX(-35em) translateY(-10em); height:5em; width: 5em;} /* up */
+  62%   {transform: translateX(-35em) translateY(0); height:5em;} /* down */
+  100%  {transform: translateX(-35em) translateY(0); height:5em;}
+}
+
+.aboutText{
+  /* font-size: 5em; */
+  position: absolute;
+  font-family: sans-serif;
+  width: 50em;
+  height: 35em;
+  transform: translateX(10em);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  /* float: right; */
+  visibility: hidden;
+}
+ p{
+  text-align: left;
+  font-size: 5em;
+  padding: 0.2em;
+  margin: 0;
+  /* opacity: 0; */
+   /* font-weight: none; */
+ }
+
+ .filler{
+   text-align: left;
+   padding: 1em;
+   font-size: 1.3em;
+   /* opacity: 0; */
+ }
+
+ @keyframes text {
+   0% {opacity: 0%;}
+   100% {opacity: 100%;}
+ }
+/* .spinTheSpin{
+  transform: r;
+} */
 /* .scroll{
   overflow: scroll;
   height: 600px;

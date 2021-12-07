@@ -99,6 +99,8 @@ circle.addEventListener("click", ()=>{
 
 window.addEventListener("scroll", ()=>{
   if (aniColour>0){
+      document.getElementById("spinny3d").style.visibility="visible";
+      document.getElementById("bouncy").style.visibility = "visible";
 
       body.style.overflow="hidden";
       document.getElementById("containerst").style.animationName = "downst";
@@ -127,5 +129,12 @@ window.addEventListener("scroll", ()=>{
       document.getElementById("circle2").style.animationName ="about2";
       circle.style.animationName = "about";
 
+      document.getElementById("spinny3d").style.animationName="spinny";
+      document.getElementById("bouncy").style.animationName="bouncy";
+      document.getElementById("aboutText").style.animationName="text";
+      setTimeout(()=>{
+        document.getElementById("aboutText").style.visibility="visible";
+      },500);
+      // document.getElementById("aboutText").style.visibility="visible";
     }
 });
