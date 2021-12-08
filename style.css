@@ -221,34 +221,43 @@ a{
 /* cube and cube rotations */
 
 #cubest{
+  -webkit-transform: rotate3d(0, 0, 0, 90deg);
   transform: rotate3d(0, 0, 0, 90deg);
   transition: 0.5s;
   /* animation-iteration-count: infin; */
   /* animation-duration: 4s; */
+
+  will-change: transform;
   animation-fill-mode: forwards;
   animation: cubest 4s, constantst 6s 4s infinite;
 }
 
 #cubend{
+  -webkit-transform: rotate3d(0, 0, 0, 90deg);
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 4s; */
+  will-change: transform;
   animation-fill-mode: forwards;
   animation: cubend 4s, constantnd 6s 4s infinite;
 }
 
 #cuberd{
+  -webkit-transform: rotate3d(0, 0, 0, 90deg);
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 2.75s; */
+  will-change: transform;
   animation-fill-mode: forwards;
   animation: cuberd 2.75s, constantrd 6s 2.75s infinite;
 }
 
 #cubeth{
+  -webkit-transform: rotate3d(0, 0, 0, 90deg);
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 2.75s; */
+  will-change: transform;
   animation-fill-mode: forwards;
   animation: cubeth 2.75s, constantth 6s 2.75s infinite;
 }
