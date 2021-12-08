@@ -141,6 +141,7 @@ a{
   /* animation-name: first; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
   /* animation: downst 2s 8s; */
 }
 
@@ -153,6 +154,7 @@ a{
   /* animation-name: second; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
 }
 
 .containerrd{
@@ -164,6 +166,7 @@ a{
   /* animation-name: third; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
 }
 
 .containerth{
@@ -175,6 +178,7 @@ a{
   /* animation-name: fourth; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
   /* transform: rotate3d(1, 1, 1, 90deg) */
 }
 
@@ -388,21 +392,6 @@ a{
   100%  {transform: translateY(900px); right:0; bottom:0;}
 }
 
-#spinny{
-  width: 15em;
-  height: 15em;
-  background-color: #92828D;
-  /* transform: rotate3d(0.1,0,1, 90deg); */
-  z-index: 4;
-  /* visibility: hidden; */
-  /* animation: spinny 3s; */
-  animation-duration: 1s;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-}
-
-
 #spinny3d{
     width: 15em;
     height: 15em;
@@ -413,15 +402,12 @@ a{
     animation-delay: 0.3s;
     animation-fill-mode: forwards;
     visibility: hidden;
+    transition: 0.4s;
 }
 
 @keyframes spinny {
   0%    {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
-  /* 50%   {transform: translateX(-30em) translateY(8em) scale(0.5) rotateZ(90deg);} */
-
-  /* 80%   {transform: translateX(-20em) translateY(5em) rotateZ(270deg);} */
   100%  {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
-
 }
 
 .face2{
@@ -542,12 +528,6 @@ a{
   transform: translateY(-2.8em) translateX(14em);
   visibility: hidden;
 }
-
-/* .skrol{
-  width: 0.2em;
-  height: 0.2em;
-
-} */
 
 img{
   width: 3em;
