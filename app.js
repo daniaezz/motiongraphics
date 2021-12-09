@@ -1,3 +1,11 @@
+//rat behaviour
+//neeeed to clean up this code :(
+//this is a calll for help
+//these comments are my diary and here to keep me sane
+
+//credit to this one obscure youtube video that helped me make the cubes, their brain is big
+// said video --> https://www.youtube.com/watch?v=TMK8rwFk9Ss&t=63s&ab_channel=QuickCodingTuts
+
 let circle = document.getElementById("circle");
 let cubest = document.getElementById("cubest");
 let cubend = document.getElementById("cubend");
@@ -5,18 +13,20 @@ let cuberd = document.getElementById("cuberd");
 let cubeth = document.getElementById("cubeth");
 let body = document.querySelector("body");
 var bgColour = 0;
-var aniColour = 0;
-
+var aniColour = 0; //i dont remember what aniColour stood for but i assume animation colour?? that kinda doesnt make sense tho
+let spinny = document.getElementById("spinny3d")
 let containerst = document.getElementById("containerst")
 let containernd = document.getElementById("containernd")
 let containerrd = document.getElementById("containerrd")
 let containerth = document.getElementById("containerth")
 
+//stop it, get some help
 
 circle.addEventListener("mouseover", ()=>{
   if (aniColour<1){
   setTimeout( ()=>{
     aniColour = 1;
+    circle.style.cursor="pointer";
     document.getElementById("circle3").style.animationName = "shadow";
     document.getElementById("projects").style.visibility = "visible";
     document.getElementById("skrol").style.visibility = "visible";
@@ -93,12 +103,18 @@ circle.addEventListener("click", ()=>{
 
 
 // add a var that changes when the animation that plays at the begining ends and make a condition so that the scroll animation only works when the first animation ended.
+//the size of my brain, how did i think of this
 
 window.addEventListener("scroll", ()=>{
+  console.log("in scroll event");
   if (aniColour>0){
+      console.log("trigger scroll animation");
+
       document.getElementById("circle3").style.display = "none";
-      document.getElementById("projects").style.visibility = "hidden";
-      document.getElementById("spinny3d").style.visibility="visible";
+      document.getElementById("projects").style.display = "none";
+      spinny.style.visibility="visible";
+      document.getElementById('skrol').style.display = "none";
+      document.getElementById("skrolText").style.display = "none";
       // document.getElementById("bouncy").style.visibility = "visible";
 
       body.style.overflow="hidden";
@@ -135,6 +151,11 @@ window.addEventListener("scroll", ()=>{
         document.getElementById("aboutText").style.visibility="visible";
       },500);
       // document.getElementById("aboutText").style.visibility="visible";
+    }
+    else {
+      {
+        console.log(" scroll animation not ready");
+      }
     }
 });
 
@@ -183,25 +204,31 @@ containerth.addEventListener("mouseout", ()=>{
 //hehe omg its micheal jackson
 
 
+document.getElementById("spinTheSpin").addEventListener("mousedown", function (e){
+  spinny.style.animationPlayState = "paused";
+  spinny.style.animationDuration="0s";
+  const x = e.clientX;
+  const y = e.clientY;
 
-// cubest.addEventListener("mouseover",()=>{
-//   cubest.style.animationPlayState = "paused";
-//
-//   cubest.addEventListener("mousedown", (e)=>{
-//     cubest.style.animationDuration = "0s";
-//     const x = e.clientX;
-//     const y = e.clientY;
-//     window.addEventListener("mousemove", rotateCube);
-//     function rotateCube(e){
-//       cubest.style.transform = `
-//       rotateX(${(y-e.clientY)/4}deg)
-//       rotateY(${(e.clientX-x)/4}deg)`;
-//       body.style.cursor = "grabbing";
-//     }
-//
-//     window.addEventListener("mouseup", ()=>{
-//       window.removeEventListener("mousemove", rotateCube);
-//       body.style.cursor = "context-menu";
-//     });
-//   });
+  window.addEventListener("mousemove", moveRotate);
+
+  function moveRotate(e){
+      document.getElementById("spinTheSpin").style.transform = `
+      rotateX(${(y-e.clientY)/2}deg)
+      rotateY(${(e.clientX-x)/2}deg)`;
+      body.style.cursor = "grabbing";
+  }
+
+  window.addEventListener("mouseup", function(){
+    window.removeEventListener("mousemove", moveRotate);
+    body.style.cursor = "context-menu";
+  });
+});
+
+
+// document.querySelectorAll("*").forEach(element => {
+//   element.addEventListener("scroll", ({target}) => console.log("scrolling: ", target, target.id, target.parent, target.parent.id))
 // });
+//
+
+//make everything disapperar and set the background colour to the same one as circle3 then enable the scroll function to reverse the animation

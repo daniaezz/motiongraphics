@@ -6,7 +6,7 @@ body{
   /* align-items: center; */
   min-height: 500px;
   background-color: #27476E;
-  height: 100.1vh;
+  /* height: 100.1vh; */
   min-width: 1000px;
 }
 
@@ -97,7 +97,7 @@ a{
 .three{
   transform: rotateY(90deg) translate3d(-3em, 0, 0);
   transform-origin: left;
-  background-color: #B5EAD7;
+  background-color: #8FC0A9;
 }
 
 .four{
@@ -127,7 +127,7 @@ a{
   align-content: center;
   justify-self: center;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
   opacity: 100%;
   user-select: none;
 }
@@ -141,7 +141,7 @@ a{
   /* animation-name: first; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
-  -webkit-transform: translateZ(0);
+  /* -webkit-transform: translateZ(0); */
   /* animation: downst 2s 8s; */
 }
 
@@ -154,7 +154,7 @@ a{
   /* animation-name: second; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
-  -webkit-transform: translateZ(0);
+  /* -webkit-transform: translateZ(0); */
 }
 
 .containerrd{
@@ -166,7 +166,7 @@ a{
   /* animation-name: third; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
-  -webkit-transform: translateZ(0);
+  /* -webkit-transform: translateZ(0); */
 }
 
 .containerth{
@@ -178,7 +178,7 @@ a{
   /* animation-name: fourth; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
-  -webkit-transform: translateZ(0);
+  /* -webkit-transform: translateZ(0); */
   /* transform: rotate3d(1, 1, 1, 90deg) */
 }
 
@@ -221,7 +221,7 @@ a{
 /* cube and cube rotations */
 
 #cubest{
-  -webkit-transform: rotate3d(0, 0, 0, 90deg);
+  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
   transition: 0.5s;
   /* animation-iteration-count: infin; */
@@ -233,7 +233,7 @@ a{
 }
 
 #cubend{
-  -webkit-transform: rotate3d(0, 0, 0, 90deg);
+  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 4s; */
@@ -243,7 +243,7 @@ a{
 }
 
 #cuberd{
-  -webkit-transform: rotate3d(0, 0, 0, 90deg);
+  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 2.75s; */
@@ -253,7 +253,7 @@ a{
 }
 
 #cubeth{
-  -webkit-transform: rotate3d(0, 0, 0, 90deg);
+  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
   /* animation-iteration-count: infin; */
   /* animation-duration: 2.75s; */
@@ -367,7 +367,7 @@ a{
 
 @keyframes about {
   0% {background-color: white; transform: scale(1.5);  z-index: -10;}
-  100%  {background-color: #E9967A; transform: scale(15); z-index: -10;}
+  100%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
 }
 
 @keyframes about2 {
@@ -429,7 +429,7 @@ a{
   align-content: center;
   justify-self: center;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
   opacity: 100%;
   user-select: none;
 }
@@ -462,7 +462,7 @@ a{
 .aboutText{
   /* font-size: 5em; */
   position: absolute;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
   width: 50em;
   height: 35em;
   transform: translateX(10em);
@@ -484,7 +484,7 @@ a{
  .filler{
    text-align: left;
    padding: 1em;
-   font-size: 1.3em;
+   font-size: 1.5em;
    position: absolute;
    /* opacity: 0; */
  }
@@ -507,14 +507,15 @@ a{
 
  .projects{
    font-size: 2em;
-   font-family: sans-serif;
+   font-family: 'Jost', sans-serif;
    color: white;
    transform: translateY(-6em);
+   /* font-weight: bold; */
 }
 
 .headings{
   font-size: 1.2em;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
   color: white;
 }
 
@@ -553,7 +554,7 @@ img{
 
 .skrolText{
   position: absolute;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
   transform: translateX(-4.5em) translateY(-1.5em);
   right: 0;
   bottom: 0;
@@ -561,4 +562,43 @@ img{
   visibility: hidden;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+}
+
+.scrollhelp {
+  position: absolute;
+  height: 101%;
+  width: 1px;
+  z-index: -100;
+}
+
+.spinTheSpin{
+  transform-style: preserve-3d;
+  transform-origin: -21em 5em;
+  left: 0;
+  /* transform: translateX(-18em) translateY(0em); */
+}
+
+.back{
+  background-color: #91785D;
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  transform: translateX(0em) translateY(15em);
+}
+
+.contact{
+  background-color: #869D7A;
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  transform: translateX(18em) translateY(15em);
+}
+
+.duckroll{
+  font-size: 5em;
+  cursor: pointer;
+  /* text-decoration: none;
+  color: aqua; */
 }
