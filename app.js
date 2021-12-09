@@ -6,20 +6,20 @@
 //credit to this one obscure youtube video that helped me make the cubes, their brain is big
 // said video --> https://www.youtube.com/watch?v=TMK8rwFk9Ss&t=63s&ab_channel=QuickCodingTuts
 
-let circle = document.getElementById("circle");
-let cubest = document.getElementById("cubest");
-let cubend = document.getElementById("cubend");
-let cuberd = document.getElementById("cuberd");
-let cubeth = document.getElementById("cubeth");
-let body = document.querySelector("body");
+var circle = document.getElementById("circle");
+var cubest = document.getElementById("cubest");
+var cubend = document.getElementById("cubend");
+var cuberd = document.getElementById("cuberd");
+var cubeth = document.getElementById("cubeth");
+var body = document.querySelector("body");
 var bgColour = 0;
 var aniColour = 0; //i dont remember what aniColour stood for but i assume animation colour?? that kinda doesnt make sense tho
-let spinny = document.getElementById("spinny3d")
-let containerst = document.getElementById("containerst")
-let containernd = document.getElementById("containernd")
-let containerrd = document.getElementById("containerrd")
-let containerth = document.getElementById("containerth")
-
+var spinny = document.getElementById("spinny3d")
+var containerst = document.getElementById("containerst")
+var containernd = document.getElementById("containernd")
+var containerrd = document.getElementById("containerrd")
+var containerth = document.getElementById("containerth")
+var animationStart = false;
 //stop it, get some help
 
 circle.addEventListener("mouseover", ()=>{
@@ -32,13 +32,18 @@ circle.addEventListener("mouseover", ()=>{
     document.getElementById("skrol").style.visibility = "visible";
     document.getElementById("skrolText").style.visibility = "visible";
     document.getElementById("projects").style.animationName = "projects";
+    setTimeout(()=>{
+      document.getElementById("projects").style.animationName = ""; //removes the animation name so it can be replayed later
+    },1000)
     document.getElementById("skrol").style.animationName = "projects";
     document.getElementById("skrolText").style.animationName = "projects";
+    document.getElementById("skrol").style.animation= "skrolImg 0.4s linear .1s infinite alternate";
+    body.style.overflow="visible";
   },2500);
 
   circle.style.transform = "scale(1.5)"
-  body.style.overflow="visible";
-
+if (!animationStart){
+  animationStart= true;
   cubest.style.visibility = "visible";
   cubend.style.visibility = "visible";
   cuberd.style.visibility = "visible";
@@ -58,6 +63,10 @@ circle.addEventListener("mouseover", ()=>{
     containerrd.style.transform = "scale(1)";
     containerth.style.transform = "scale(1)";
   },1250);
+
+}
+
+
   }
   });
 
@@ -111,6 +120,7 @@ window.addEventListener("scroll", ()=>{
       console.log("trigger scroll animation");
 
       document.getElementById("circle3").style.display = "none";
+      document.getElementById("circle3").style.animationName = ""; //removes animation name so it can be replayed later
       document.getElementById("projects").style.display = "none";
       spinny.style.visibility="visible";
       document.getElementById('skrol').style.display = "none";
@@ -174,17 +184,48 @@ window.addEventListener("scroll", ()=>{
       setTimeout(()=>{
         body.style.backgroundColor = "#27476E";
       }, 100);
+
+      setTimeout(()=>{
+
+        spinny.style.visibility = "hidden";
+        spinny.style.transform = "translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg)";
+      },500);
       document.getElementById("aboutText").style.animationDuration = "1.8s";
       document.getElementById("aboutText").style.animationDirection = "reverse";
       document.getElementById("aboutText").style.animationName="text";
       spinny.style.animationName="spinnyRev";
-      
+
+      cubest.style.visibility = "visible";
+      cubend.style.visibility = "visible";
+      cuberd.style.visibility = "visible";
+      cubeth.style.visibility = "visible";
+      // circle.style.visibility = "visible";
+
+      body.style.overflow = "visible";
 
 
+      containerst.style.animationName = "downstRev";
+      containerth.style.animationName = "downthRev";
+      containerrd.style.animationName = "downrdRev";
+      containernd.style.animationName = "downndRev";
 
+      containerst.style.animationDuration = "1s";
+      containerth.style.animationDuration = "1s";
+      containerrd.style.animationDuration = "0.8s";
+      containernd.style.animationDuration = "0.8s";
 
+      containerst.style.animationTimingFunction="ease-out";
+      containerth.style.animationTimingFunction="ease-out";
+      containerrd.style.animationTimingFunction="ease-out";
+      containernd.style.animationTimingFunction="ease-out";
 
-
+      setTimeout(()=>{
+        document.getElementById("circle3").style.display = "block";
+        document.getElementById("circle3").style.animationName = "shadow";
+        document.getElementById("projects").style.animationName = "projects";
+        document.getElementById("projects").style.display = "block";
+        aniColour = 1;
+      },1000);
 
     }
 

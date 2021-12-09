@@ -67,7 +67,7 @@ a{
   justify-self: center;
   position: absolute;
   transition: 0.5s;
-  z-index: 10;
+  z-index: 100;
 }
 
 
@@ -147,6 +147,7 @@ a{
   animation-fill-mode: forwards;
   /* -webkit-transform: translateZ(0); */
   /* animation: downst 2s 8s; */
+  z-index: 15;
 }
 
 .containernd{
@@ -159,6 +160,7 @@ a{
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
   /* -webkit-transform: translateZ(0); */
+  z-index: 15;
 }
 
 .containerrd{
@@ -171,6 +173,7 @@ a{
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
   /* -webkit-transform: translateZ(0); */
+  z-index: 15;
 }
 
 .containerth{
@@ -184,6 +187,7 @@ a{
   animation-fill-mode: forwards;
   /* -webkit-transform: translateZ(0); */
   /* transform: rotate3d(1, 1, 1, 90deg) */
+  z-index: 15;
 }
 
 #circle3{
@@ -383,7 +387,7 @@ a{
 /* about reverse animation */
 @keyframes aboutRev {
   0%    {background-color: #ACACDE; transform: scale(15); z-index: -10;}
-  100%  {background-color: #27476E; transform: scale(1.5);  z-index: -10;}
+  100%  {background-color: white; transform: scale(1);  z-index: 10;}
 }
 /*
 .first2{
@@ -410,6 +414,26 @@ a{
 @keyframes downnd {
   0%    {transform: translateY(0px); right:0px; bottom:0;}
   100%  {transform: translateY(900px); right:0; bottom:0;}
+}
+
+@keyframes downstRev {
+  0%    {transform: translateY(900px);left:0; top:0;}
+  100%  {transform: translateY(0px); left: 0px; top:0px; }
+}
+
+@keyframes downthRev {
+  0%    {transform: translateY(900px); right:0; top:0;}
+  100%  {transform: translateY(0px); right: 0px; top:0px; }
+}
+
+@keyframes downrdRev {
+  0%    {transform: translateY(900px); left:0; bottom:0;}
+  100%  {transform: translateY(0px); left:0px; bottom:0; }
+}
+
+@keyframes downndRev {
+  0%    {transform: translateY(900px); right:0; bottom:0;}
+  100%  {transform: translateY(0px); right:0px; bottom:0;}
 }
 
 #spinny3d{
@@ -533,26 +557,31 @@ a{
   font-size: 1.2em;
   font-family: 'Jost', sans-serif;
   color: white;
+  /* position: fixed; */
 }
 
 .mff{
-  transform: translateY(-19.5em) translateX(-14.3em);
+  transform: translateY(-23em);
   visibility: hidden;
+  position: absolute;
 }
 
 .comix{
-  transform: translateY(-20.6em) translateX(14em);
+  transform: translateY(-23em) translateX(28em);
   visibility: hidden;
+  position: absolute;
 }
 
 .sound{
-  transform: translateY(-1.8em) translateX(-14.3em);
+  transform: translateY(-2.8em) ;
   visibility: hidden;
+  position: absolute;
 }
 
 .videoh{
-  transform: translateY(-2.8em) translateX(14em);
+  transform: translateY(-2.8em) translateX(28em);
   visibility: hidden;
+  position: absolute;
 }
 
 img{
@@ -561,7 +590,7 @@ img{
   position: absolute;
   right: 0;
   bottom: 0;
-  transform: translateX(-5em) translateY(-3em);
+  transform: translateX(-6em) translateY(-5em);
   /* transform: translateX(10em); */
   visibility: hidden;
   animation-duration: 1.5s;
@@ -571,15 +600,21 @@ img{
 .skrolText{
   position: absolute;
   font-family: 'Jost', sans-serif;
-  transform: translateX(-4.5em) translateY(-1.5em);
+  transform: translateX(-3.2em) translateY(-1.5em);
   right: 0;
   bottom: 0;
   color: white;
   visibility: hidden;
   animation-duration: 1.5s;
+  font-size: 1.5em;
   animation-fill-mode: forwards;
+
 }
 
+@keyframes skrolImg {
+  0%    {transform: translateX(-6em) translateY(-5em);}
+  100%  {transform: translateX(-6em) translateY(-6em);}
+}
 .scrollhelp {
   position: absolute;
   height: 101%;
