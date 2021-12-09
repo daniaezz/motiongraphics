@@ -23,7 +23,7 @@ let containerth = document.getElementById("containerth")
 //stop it, get some help
 
 circle.addEventListener("mouseover", ()=>{
-  if (aniColour<1){
+  if (aniColour==0){
   setTimeout( ()=>{
     aniColour = 1;
     circle.style.cursor="pointer";
@@ -107,7 +107,7 @@ circle.addEventListener("click", ()=>{
 
 window.addEventListener("scroll", ()=>{
   console.log("in scroll event");
-  if (aniColour>0){
+  if (aniColour==1){
       console.log("trigger scroll animation");
 
       document.getElementById("circle3").style.display = "none";
@@ -138,13 +138,26 @@ window.addEventListener("scroll", ()=>{
       containernd.style.animationFillMode = "forwards";
       containernd.style.animationTimingFunction = "ease-in";
 
+      setTimeout(()=>{
+        cubest.style.visibility = "hidden";
+        cubend.style.visibility = "hidden";
+        cuberd.style.visibility = "hidden";
+        cubeth.style.visibility = "hidden";
+        body.style.backgroundColor = "#ACACDE";
+        circle.style.visibility = "hidden";
+        body.style.overflow = "visible";
+        aniColour = 2;
+        console.log(aniColour +"this is the value for anicolour after scrolling once")
+        spinny.style.transform = "translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg)";
+      }, 800)
+
       circle.style.animationDuration = "0.7s";
       document.getElementById("circle2").style.animationDuration = "0.7s";
       // circle.style.animationDelay = "0.s"
       document.getElementById("circle2").style.animationName ="about2";
       circle.style.animationName = "about";
 
-      document.getElementById("spinny3d").style.animationName="spinny";
+      spinny.style.animationName="spinny";
       // document.getElementById("bouncy").style.animationName="bouncy";
       document.getElementById("aboutText").style.animationName="text";
       setTimeout(()=>{
@@ -152,6 +165,29 @@ window.addEventListener("scroll", ()=>{
       },500);
       // document.getElementById("aboutText").style.visibility="visible";
     }
+    else if (aniColour==2){
+      // spinny.style.zIndex = "20";
+      body.style.overflow = "hidden";
+      console.log("animation active or is supposed to be active")
+      circle.style.visibility = "visible";
+      circle.style.animationName="aboutRev";
+      setTimeout(()=>{
+        body.style.backgroundColor = "#27476E";
+      }, 100);
+      document.getElementById("aboutText").style.animationDuration = "1.8s";
+      document.getElementById("aboutText").style.animationDirection = "reverse";
+      document.getElementById("aboutText").style.animationName="text";
+      spinny.style.animationName="spinnyRev";
+      
+
+
+
+
+
+
+
+    }
+
     else {
       {
         console.log(" scroll animation not ready");
@@ -205,8 +241,6 @@ containerth.addEventListener("mouseout", ()=>{
 
 
 document.getElementById("spinTheSpin").addEventListener("mousedown", function (e){
-  spinny.style.animationPlayState = "paused";
-  spinny.style.animationDuration="0s";
   const x = e.clientX;
   const y = e.clientY;
 

@@ -2,8 +2,8 @@ body{
   margin: 0;
   padding: 0;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
   min-height: 500px;
   background-color: #27476E;
   /* height: 100.1vh; */
@@ -365,6 +365,7 @@ a{
   100% {background-color: white; transform: scale(0.1);  z-index: -10;}
 }
 
+/* colour change for background on scroll */
 @keyframes about {
   0% {background-color: white; transform: scale(1.5);  z-index: -10;}
   100%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
@@ -372,7 +373,13 @@ a{
 
 @keyframes about2 {
   0% {background-color: #27476E; transform: scale(1.5);  z-index: -10;}
-  100%  {background-color: #E9967A; transform: scale(15); z-index: -10;}
+  100%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
+}
+
+/* about reverse animation */
+@keyframes aboutRev {
+  0%    {background-color: #ACACDE; transform: scale(15); z-index: -10;}
+  100%  {background-color: #27476E; transform: scale(1.5);  z-index: -10;}
 }
 /*
 .first2{
@@ -417,6 +424,11 @@ a{
 @keyframes spinny {
   0%    {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
   100%  {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
+}
+
+@keyframes spinnyRev {
+  0%    {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
+  100%  {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
 }
 
 .face2{
