@@ -310,10 +310,12 @@ a{
     visibility: hidden;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    /* z-index: -10; */
+    will-change: background-color, scale;
 }
 
 #circle{
-  animation-duration: 0.5s;
+  animation-duration: 0.7s;
   animation-fill-mode: forwards;
   overflow: hidden;
 }
@@ -356,6 +358,10 @@ a{
   100%  {background-color: white; transform: scale(1);  z-index: 10;}
 }
 
+@keyframes about2rev {
+  0%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
+  100% {background-color: #27476E; transform: scale(1);  z-index: 10;}
+}
 /* animation for cubes going down */
 @keyframes downst {
   0%    {transform: translateY(0px); left: 0px; top:0px; }
@@ -410,11 +416,13 @@ a{
   transition: 0.4s;
 }
 
+/* spinny spinny cube */
 @keyframes spinny {
   0%    {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
   100%  {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
 }
 
+/* rev animation for the cube that comes down with about, i should probably remove this and just set the animation direction to revrse but does it really matter? */
 @keyframes spinnyRev {
   0%    {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
   100%  {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
@@ -445,6 +453,7 @@ a{
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
   visibility: hidden;
+  will-change: opacity;
 }
 
  p{
@@ -461,22 +470,26 @@ a{
    position: absolute;
  }
 
+/* animates the text in the "about" page */
  @keyframes text {
    0% {opacity: 0%;}
    100% {opacity: 100%;}
  }
 
+/* idk  why i added classes specifically for animation but it makes sense to me */
  #projects{
    animation-duration: 0.5s;
    animation-fill-mode: forwards;
    visibility: hidden;
  }
 
+/* animates the text "projects" and "documentation" */
  @keyframes projects {
    0%  {opacity: 0%;}
    100% {opacity: 100%;}
  }
 
+/* contains the text "projects" */
  .projects{
    font-size: 2em;
    font-family: 'Jost', sans-serif;
@@ -484,6 +497,7 @@ a{
    transform: translateY(-6em);
 }
 
+/* headings over cubes */
 .headings{
   font-size: 1.2em;
   font-family: 'Jost', sans-serif;
@@ -514,7 +528,8 @@ a{
   position: absolute;
 }
 
-img{
+/* image pointing downwards */
+#skrol{
   width: 3em;
   height: 3em;
   position: absolute;
@@ -551,17 +566,13 @@ img{
     visibility: hidden;
 }
 
+/* animates the img tha points downwards */
 @keyframes skrolImg {
   0%    {transform: translateY(-5em);}
   100%  {transform: translateY(-6em);}
 }
 
-/* .scrollhelp {
-  position: absolute;
-  height: 101%;
-  width: 1px;
-  z-index: -100;
-} */
+
 
 /* container for the spinning cube */
 .spinTheSpin{
@@ -570,7 +581,35 @@ img{
   left: 0;
 }
 
+/* easter egg hehehehe */
 .aiyaiya{
   font-size: 5em;
   cursor: pointer;
+}
+
+/* wrapper for the about me icons */
+.icons{
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* class for the icon images */
+.hehe{
+  padding-left: 2em;
+  padding-right: 2em;
+  display: inline-block;
+}
+
+/* call me button */
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px){
+ /* rewrite the css for what needs to change here */
+
 }

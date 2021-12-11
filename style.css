@@ -50,12 +50,12 @@ a{
   font-size: 18px;
 }
 
-.ass1{
+/* .ass1{ */
   /* top:0px; */
   /* left: 0px; */
-  text-align: left;
+  /* text-align: left;
   align-items: center;
-}
+} */
 
 .circle{
   width: 9em;
@@ -437,16 +437,16 @@ a{
 }
 
 #spinny3d{
-    width: 15em;
-    height: 15em;
-    transform-style: preserve-3d;
-    transform-origin: 3em 3em;
-    transform:  translateY(-50em);
-    animation-duration: 0.7s;
-    animation-delay: 0.3s;
-    animation-fill-mode: forwards;
-    visibility: hidden;
-    transition: 0.4s;
+  width: 15em;
+  height: 15em;
+  transform-style: preserve-3d;
+  transform-origin: 3em 3em;
+  transform:  translateY(-50em);
+  animation-duration: 0.7s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  transition: 0.4s;
 }
 
 @keyframes spinny {
@@ -600,15 +600,29 @@ img{
 .skrolText{
   position: absolute;
   font-family: 'Jost', sans-serif;
-  transform: translateX(-3.2em) translateY(-1.5em);
+  /* transform: translateX(-3.2em) translateY(-1.5em);
   right: 0;
-  bottom: 0;
+  bottom: 0; */
+  /* transform: translateY(5em);
   color: white;
   visibility: hidden;
   animation-duration: 1.5s;
   font-size: 1.5em;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
+}
 
+.docHint{
+    position: absolute;
+    font-family: 'Jost', sans-serif;
+    /* transform: translateX(-3.2em) translateY(-1.5em);
+    right: 0;
+    bottom: 0; */
+    transform: translateY(6em);
+    color: white;
+    /* visibility: hidden; */
+    animation-duration: 1.5s;
+    font-size: 1.3em;
+    animation-fill-mode: forwards;
 }
 
 @keyframes skrolImg {

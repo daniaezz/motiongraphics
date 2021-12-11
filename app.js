@@ -25,15 +25,19 @@ var animationStart = false;
 circle.addEventListener("mouseover", ()=>{
   if (aniColour==0){
   setTimeout( ()=>{
-    aniColour = 1;
     circle.style.cursor="pointer";
     document.getElementById("circle3").style.animationName = "shadow";
     document.getElementById("projects").style.visibility = "visible";
+    console.log("projects is visible ansn animation is set");
     document.getElementById("skrol").style.visibility = "visible";
     document.getElementById("skrolText").style.visibility = "visible";
     document.getElementById("projects").style.animationName = "projects";
+
     setTimeout(()=>{
-      document.getElementById("projects").style.animationName = ""; //removes the animation name so it can be replayed later
+      //removes the animation name so it can be replayed later
+      document.getElementById("projects").style.animationName = "";
+      console.log("project animation is removed");
+      aniColour = 1;
     },1000)
     document.getElementById("skrol").style.animationName = "projects";
     document.getElementById("skrolText").style.animationName = "projects";
@@ -72,7 +76,7 @@ if (!animationStart){
 
 circle.addEventListener("mouseout", ()=>{
   circle.style.transform = "none";
-  console.log(aniColour)
+  console.log(aniColour);
 });
 
 //this is not useless do not change this !!!!!!
@@ -94,6 +98,10 @@ circle.addEventListener("click", ()=>{
     document.getElementById("projects").innerHTML = "P r o j e c t s";
     document.getElementById("circle2").style.animationName = "bgBack";
     document.getElementById("circle3").style.backgroundColor = "white";
+    document.getElementById("amff").href = "https://github.com/daniaezz/Assignment1";
+    document.getElementById("acomix").href = "https://github.com/daniaezz/COMIX-STRIP";
+    document.getElementById("asound").href = "https://github.com/daniaezz/unusual";
+    document.getElementById("avideoh").href = "https://github.com/dweggyness/CommLab-Assignment4";
     // document.getElementById("circle2").style.animationDuration = "0.8s";
     setTimeout(()=>{
       circle.style.animationName = "circleBack";
@@ -121,7 +129,9 @@ window.addEventListener("scroll", ()=>{
 
       document.getElementById("circle3").style.display = "none";
       document.getElementById("circle3").style.animationName = ""; //removes animation name so it can be replayed later
+      console.log("animation for the circle is set to null");
       document.getElementById("projects").style.display = "none";
+      console.log("display of projects is set to none, circle3 is none and animation is null");
       spinny.style.visibility="visible";
       document.getElementById('skrol').style.display = "none";
       document.getElementById("skrolText").style.display = "none";
@@ -157,7 +167,7 @@ window.addEventListener("scroll", ()=>{
         circle.style.visibility = "hidden";
         body.style.overflow = "visible";
         aniColour = 2;
-        console.log(aniColour +"this is the value for anicolour after scrolling once")
+        console.log(aniColour +"this is the value for anicolour after scrolling once");
         spinny.style.transform = "translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg)";
       }, 800)
 
@@ -178,7 +188,7 @@ window.addEventListener("scroll", ()=>{
     else if (aniColour==2){
       // spinny.style.zIndex = "20";
       body.style.overflow = "hidden";
-      console.log("animation active or is supposed to be active")
+      console.log("animation active or is supposed to be active");
       circle.style.visibility = "visible";
       circle.style.animationName="aboutRev";
       setTimeout(()=>{
@@ -224,7 +234,9 @@ window.addEventListener("scroll", ()=>{
         document.getElementById("circle3").style.animationName = "shadow";
         document.getElementById("projects").style.animationName = "projects";
         document.getElementById("projects").style.display = "block";
-        aniColour = 1;
+        console.log("display of projects is set to block and ani is projects, circle3 is block and animation is shadows");
+        setTimeout(()=>{
+          aniColour = 1;},1000);
       },1000);
 
     }

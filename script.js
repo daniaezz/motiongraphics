@@ -6,19 +6,18 @@ var cubeth = document.getElementById("cubeth");
 var body = document.querySelector("body");
 var bgColour = 0;
 var aniCon = 0; //stands for animation condition
-var spinny = document.getElementById("spinny3d")
-var containerst = document.getElementById("containerst")
-var containernd = document.getElementById("containernd")
-var containerrd = document.getElementById("containerrd")
-var containerth = document.getElementById("containerth")
-var animationStart = false;
-
-
+var spinny = document.getElementById("spinny3d");
+var containerst = document.getElementById("containerst");
+var containernd = document.getElementById("containernd");
+var containerrd = document.getElementById("containerrd");
+var containerth = document.getElementById("containerth");
+var documentation = false;
+// var animationStart = false;
 
 //NOTE TO SELF: TO FIX THE PROJECT AND SHADOW APPEARING, MAKE THE BG A CIRCLE THAT TAKES OVER AND MAKE THEIR Z-INDEXES LOWER
 
 
-window.addEventListener("load", (e)=>{
+window.addEventListener("load", ()=>{
   setTimeout( ()=>{ //timeout used so that the following only happens after inital animation is done
     circle.style.cursor="pointer";
     document.getElementById("circle3").style.animationName = "shadow"; //makes the shadow for the circle start animating
@@ -34,7 +33,6 @@ window.addEventListener("load", (e)=>{
     setTimeout(()=>{ //enables scrolling after all animations are done
       document.getElementById("projects").style.animationName = ""; //removes the animation name so it can be replayed later
       console.log("project animation is removed");
-      aniCon = 1;
     },1000)
   },2500);
 
@@ -58,6 +56,9 @@ window.addEventListener("load", (e)=>{
       containerth.style.transform = "scale(1)";
     },1250);
 
+    setTimeout(()=>{
+      aniCon = 1;
+    },2500);
 
 });
 
@@ -77,27 +78,45 @@ circle.addEventListener("mouseout", ()=>{
 
 circle.addEventListener("click", ()=>{
   if (bgColour<1 && aniCon>0){
+    documentation = true;
     document.getElementById("circle2").style.visibility="visible";
+
+    setTimeout(()=>{
+      document.getElementById("projects").innerHTML = "D o c u m e n t a t i o n";
+      document.getElementById("docHint").innerHTML = "P r o j e c t s";
+      document.getElementById("amff").href = "https://github.com/daniaezz/Assignment1";
+      document.getElementById("acomix").href = "https://github.com/daniaezz/COMIX-STRIP";
+      document.getElementById("asound").href = "https://github.com/daniaezz/unusual";
+      document.getElementById("avideoh").href = "https://github.com/dweggyness/CommLab-Assignment4";
+    },100);
     document.getElementById("circle2").style.animationName = "extendBg";
     circle.style.animationName="circle2Anim";
     document.getElementById("circle3").style.backgroundColor = "#27476E";
-    document.getElementById("projects").innerHTML = "D o c u m e n t a t i o n";
-    document.getElementById("docHint").innerHTML = "P r o j e c t s";
-    document.getElementById("amff").href = "https://github.com/daniaezz/Assignment1";
-    document.getElementById("acomix").href = "https://github.com/daniaezz/COMIX-STRIP";
-    document.getElementById("asound").href = "https://github.com/daniaezz/unusual";
-    document.getElementById("avideoh").href = "https://github.com/dweggyness/CommLab-Assignment4";
     bgColour = 1;
+    setTimeout(()=>{
+      body.style.backgroundColor = "#EF7A85"; //changes bg colour to pink
+      // document.getElementById("circle2").style.visibility="hidden";
+    },500);
   }
   else if (bgColour>0){
-    document.getElementById("projects").innerHTML = "P r o j e c t s";
+    document.getElementById("circle2").style.visibility="visible";
+
+    setTimeout(()=>{
+      document.getElementById("projects").innerHTML = "P r o j e c t s";
+      document.getElementById("docHint").innerHTML = "D o c u m e n t a t i o n";
+      document.getElementById("amff").href = "https://daniaezz.github.io/Assignment1/";
+      document.getElementById("acomix").href = "https://daniaezz.github.io/COMIX-STRIP/";
+      document.getElementById("asound").href = "https://daniaezz.github.io/unusual/";
+      document.getElementById("avideoh").href = "https://dweggyness.github.io/CommLab-Assignment4/";
+
+    },100);
+    documentation = false;
     document.getElementById("circle2").style.animationName = "bgBack";
     document.getElementById("circle3").style.backgroundColor = "white";
-    document.getElementById("docHint").innerHTML = "D o c u m e n t a t i o n";
-    document.getElementById("amff").href = "https://daniaezz.github.io/Assignment1/";
-    document.getElementById("acomix").href = "https://daniaezz.github.io/COMIX-STRIP/";
-    document.getElementById("asound").href = "https://daniaezz.github.io/unusual/";
-    document.getElementById("avideoh").href = "https://dweggyness.github.io/CommLab-Assignment4/";
+
+    setTimeout(()=>{
+      body.style.backgroundColor = "#27476E"; //changes bg colour back to blue
+    },100)
 
     // document.getElementById("circle2").style.animationDuration = "0.8s";
     setTimeout(()=>{
@@ -126,7 +145,7 @@ window.addEventListener("scroll", ()=>{
 
       document.getElementById("circle3").style.display = "none";
       document.getElementById("circle3").style.animationName = ""; //removes animation name so it can be replayed later
-      console.log("animation for the circle is set to null");
+      // console.log("animation for the circle is set to null");
       document.getElementById("projects").style.display = "none";
       console.log("display of projects is set to none, circle3 is none and animation is null");
       spinny.style.visibility="visible";
@@ -179,29 +198,52 @@ window.addEventListener("scroll", ()=>{
       // document.getElementById("bouncy").style.animationName="bouncy";
       document.getElementById("aboutText").style.animationName="text";
       document.getElementById("aboutText").style.animationDirection = "normal";
+      document.getElementById("circle2").style.visibility = "hidden";
 
       setTimeout(()=>{
         document.getElementById("aboutText").style.visibility="visible";
+
+        // window.scrollTo(0,0);
 
       },500);
       // document.getElementById("aboutText").style.visibility="visible";
     }
     else if (aniCon==2){
       // spinny.style.zIndex = "20";
-      document.getElementById("cubes").style.visibility = "visible";
+      document.getElementById("circle2").style.visibility = "hidden";
 
+      document.getElementById("cubes").style.visibility = "visible";
+      // document.getElementById("circle2").style.animationName = "about2";
       body.style.overflow = "hidden";
       console.log("animation active or is supposed to be active");
       circle.style.visibility = "visible";
-      circle.style.animationName="aboutRev";
-      setTimeout(()=>{
-        body.style.backgroundColor = "#27476E";
-      }, 100);
 
       setTimeout(()=>{
+        if (!documentation){
+          body.style.backgroundColor = "#27476E";
+        }
+        else{
+          body.style.backgroundColor = "#EF7A85";
+        }
+      },200);
 
+      if (!documentation){
+        circle.style.animationName="aboutRev";
+      }
+      else{
+        circle.style.animationName="about2rev";
+      }
+
+      // else{
+      //   // document.getElementById("circle3").style.backgroundColor ="#27476E";
+      //   // circle.style.backgroundColor = "#27476E";
+      // }
+
+      setTimeout(()=>{
         spinny.style.visibility = "hidden";
         spinny.style.transform = "translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg)";
+        document.getElementById('skrol').style.display = "block";
+        document.getElementById("skrolText").style.display = "block";
       },500);
       document.getElementById("aboutText").style.animationDuration = "1.8s";
       document.getElementById("aboutText").style.animationDirection = "reverse";
@@ -236,6 +278,9 @@ window.addEventListener("scroll", ()=>{
       document.getElementById("circle3").style.animationName = "shadow";
       document.getElementById("projects").style.animationName = "projects";
       document.getElementById("projects").style.display = "block";
+
+      // document.getElementById('skrol').style.animationName = "projects";
+      // document.getElementById("skrolText").style.animationName = "projects";
 
 
         setTimeout(()=>{
@@ -314,3 +359,9 @@ document.getElementById("spinTheSpin").addEventListener("mousedown", function (e
     body.style.cursor = "context-menu";
   });
 });
+
+
+
+function hehe(){
+  alert("dont call me >:(");
+}
