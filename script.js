@@ -63,7 +63,7 @@ window.addEventListener("load", (e)=>{
 
 circle.addEventListener("mouseover", ()=>{
   circle.style.transform = "scale(1.5)"
-  if (aniCon==1){
+  if (aniCon>0){
     document.getElementById("docHint").style.visibility = "visible";
   }
 });
@@ -178,8 +178,11 @@ window.addEventListener("scroll", ()=>{
       spinny.style.animationName="spinny";
       // document.getElementById("bouncy").style.animationName="bouncy";
       document.getElementById("aboutText").style.animationName="text";
+      document.getElementById("aboutText").style.animationDirection = "normal";
+
       setTimeout(()=>{
         document.getElementById("aboutText").style.visibility="visible";
+
       },500);
       // document.getElementById("aboutText").style.visibility="visible";
     }
@@ -236,7 +239,9 @@ window.addEventListener("scroll", ()=>{
 
 
         setTimeout(()=>{
-          aniCon = 1;},1000);
+          document.getElementById("aboutText").style.animationName = "";
+          document.getElementById("aboutText").style.visibility = "hidden";
+          aniCon = 1;},3000);
     }
 
     else {

@@ -6,8 +6,9 @@ body{
   background-color: #27476E;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 103vh;
   position: absolute;
+  /* overflow: scroll; */
 }
 
 a{
@@ -56,6 +57,10 @@ a{
   transition: 0.5s;
   z-index: 100;
 }
+
+/* .circle:hover{
+
+} */
 
 .cube{
   transform-style: preserve-3d;
@@ -524,7 +529,7 @@ img{
 .skrolText{ /*displays "about" under the arrow pointing down */
   position: absolute;
   font-family: 'Jost', sans-serif;
-  transform: translateY(-1.5em);
+  transform: translateY(-1.2em);
   bottom: 0;
   /* transform: translateY(5em); */
   color: white;
@@ -551,12 +556,12 @@ img{
   100%  {transform: translateY(-6em);}
 }
 
-.scrollhelp {
+/* .scrollhelp {
   position: absolute;
   height: 101%;
   width: 1px;
   z-index: -100;
-}
+} */
 
 /* container for the spinning cube */
 .spinTheSpin{
