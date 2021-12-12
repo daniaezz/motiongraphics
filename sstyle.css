@@ -16,7 +16,7 @@ a{
 }
 
 .everything{
-  position: relative;
+  /* position: relative; */
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -58,10 +58,6 @@ a{
   z-index: 100;
 }
 
-/* .circle:hover{
-
-} */
-
 .cube{
   transform-style: preserve-3d;
   transition: 0.4s;
@@ -72,7 +68,6 @@ a{
   display: grid;
   visibility: hidden;
   transform: rotate3d(1, 1, 1, 90deg);
-  /* transform: scale(0.1); */
 }
 
 .one{
@@ -627,6 +622,10 @@ a{
   display: inline-block;
 }
 
+.imghehe{
+  width: 3.8em;
+}
+
 /* call me button */
 button{
   border: none;
@@ -657,7 +656,114 @@ button{
 @media (max-width: 768px){
  /* rewrite the css for what needs to change here */
  .projects{
-   font-size: 4em;
+   font-size: 1.5em;
+   transform: translateY(-6em);
  }
+
+ .circle{
+   width: 5em;
+   height: 5em;
+ }
+
+ .cubes{
+   width: 18em;
+   height: 20em;
+ }
+
+ .face{
+   width: 2.5em;
+   height: 2.5em;
+ }
+
+ .cube{
+   transform-origin: 0.7em 0.7em;
+   width: 5em;
+   height: 5em;
+   display: grid;
+   visibility: hidden;
+   transform: rotate3d(1, 1, 1, 90deg);
+ }
+
+ .six{
+   transform: translate3d(0, 0, 0.5em);
+ }
+
+ .aboutText{ /*contains all the text that shows up on about*/
+   width: 10em;
+   height: 30em;
+   transform: translateX(3em);
+ }
+
+ p{
+  font-size: 2em;
+ }
+
+ .filler{ /*about text marhaba*/
+   padding: 0.2em;
+   font-size: 1em;
+ }
+
+ .icons{
+   bottom: 0;
+   position: absolute;
+   right: 0;
+   transform: translateY(-9em);
+ }
+
+ /* class for the icon images */
+ .hehe{
+   padding-left: 0.4em;
+   padding-right: 0.4em;
+ }
+
+ .imghehe{
+   width: 2em;
+ }
+
+ #spinny3d{ /*the cube --> not its container*/
+   width: 5em;
+   height: 5em;
+   transform: translateY(-30em);
+ }
+
+ .face2{ /*for the spinny cube*/
+   width: 6em;
+   height: 6em;
+ }
+
+ @keyframes spinny {
+   0%    {transform: translateX(-7em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
+   100%  {transform: translateX(-7em) translateY(-10em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
+ }
+
+ .headings{
+   font-size: 0.5em;
+   font-family: 'Jost', sans-serif;
+   color: white;
+ }
+
+ /* .mff{
+   visibility: visible;
+ }
+
+ .comix{
+   visibility: visible;
+ }
+
+ .sound{
+   visibility: visible;
+ }
+
+ .videoh{
+   visibility: visible;
+ } */
+
+ /* .docHint{ */
+    /*displays documentation on hover over the circle */
+     /* transform: translateY(5em); */
+     /* rotateX(180deg) rotateY(180deg) */
+     /* font-size: 0.8em; */
+     /* visibility: visible; */
+ /* } */
 
 }
