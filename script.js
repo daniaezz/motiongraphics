@@ -23,16 +23,17 @@ window.addEventListener("load", ()=>{
     document.getElementById("circle3").style.animationName = "shadow"; //makes the shadow for the circle start animating
     document.getElementById("projects").style.visibility = "visible"; //heading appears
     document.getElementById("projects").style.animationName = "projects";
-    console.log("projects is visible ansn animation is set");
+    // console.log("projects is visible ansn animation is set");
     document.getElementById("skrolText").style.visibility = "visible";
     document.getElementById("skrol").style.visibility = "visible";
-    document.getElementById("skrol").style.animation= "skrolImg 0.4s linear .1s infinite alternate";
+    document.getElementById("skrol").style.animation= "clickme1 0.4s linear .1s infinite alternate";
+    document.getElementById("skrol2").style.animation= "clickme2 0.4s linear .1s infinite alternate";
     // document.getElementById("skrol").style.animationName = "projects";
     document.getElementById("skrolText").style.animationName = "projects";
-    body.style.overflow="visible";
+    // body.style.overflow="visible";
     setTimeout(()=>{ //enables scrolling after all animations are done
       document.getElementById("projects").style.animationName = ""; //removes the animation name so it can be replayed later
-      console.log("project animation is removed");
+      // console.log("project animation is removed");
     },1000)
   },2500);
 
@@ -64,7 +65,7 @@ window.addEventListener("load", ()=>{
 
 circle.addEventListener("mouseover", ()=>{
   circle.style.transform = "scale(1.5)"
-  if (aniCon>0){
+  if (aniCon==1){
     document.getElementById("docHint").style.visibility = "visible";
   }
 });
@@ -138,22 +139,25 @@ circle.addEventListener("click", ()=>{
 // add a var that changes when the animation that plays at the begining ends and make a condition so that the scroll animation only works when the first animation ended.
 //the size of my brain, how did i think of this
 
-window.addEventListener("scroll", ()=>{
-  console.log("in scroll event");
+document.getElementById("texttexttext").addEventListener("click", ()=>{
+  // console.log("in scroll event");
   if (aniCon==1){
-      console.log("trigger scroll animation");
-
+      // console.log("trigger scroll animation");
+      aniCon = 0;
       document.getElementById("circle3").style.display = "none";
       document.getElementById("circle3").style.animationName = ""; //removes animation name so it can be replayed later
       // console.log("animation for the circle is set to null");
       document.getElementById("projects").style.display = "none";
-      console.log("display of projects is set to none, circle3 is none and animation is null");
+      // console.log("display of projects is set to none, circle3 is none and animation is null");
       spinny.style.visibility="visible";
       document.getElementById('skrol').style.display = "none";
-      document.getElementById("skrolText").style.display = "none";
+      // document.getElementById("skrolText").style.display = "none";
+      document.getElementById("skrol2").style.display = "none";
+      document.getElementById("skrol").style.display = "none";
+      document.getElementById("texttexttext").innerHTML = "B a c k";
       // document.getElementById("bouncy").style.visibility = "visible";
 
-      body.style.overflow="hidden";
+      // body.style.overflow="hidden";
       containerst.style.animationName = "downst";
       containerst.style.animationDuration = "0.8s";
       containerst.style.animationFillMode = "forwards";
@@ -181,10 +185,10 @@ window.addEventListener("scroll", ()=>{
         cubeth.style.visibility = "hidden";
         body.style.backgroundColor = "#ACACDE";
         circle.style.visibility = "hidden";
-        body.style.overflow = "visible";
+        // body.style.overflow = "visible";
         aniCon = 2;
         document.getElementById("cubes").style.visibility = "hidden";
-        console.log(aniCon +"this is the value for aniCon after scrolling once");
+        // console.log(aniCon +"this is the value for aniCon after scrolling once");
         spinny.style.transform = "translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg)";
       }, 800)
 
@@ -198,10 +202,15 @@ window.addEventListener("scroll", ()=>{
       // document.getElementById("bouncy").style.animationName="bouncy";
       document.getElementById("aboutText").style.animationName="text";
       document.getElementById("aboutText").style.animationDirection = "normal";
+
+      console.log("about text gained animation aniCon 1");
+
       document.getElementById("circle2").style.visibility = "hidden";
 
       setTimeout(()=>{
         document.getElementById("aboutText").style.visibility="visible";
+
+        console.log("aboutText visibility is visible anicon 1");
 
         // window.scrollTo(0,0);
 
@@ -214,9 +223,10 @@ window.addEventListener("scroll", ()=>{
 
       document.getElementById("cubes").style.visibility = "visible";
       // document.getElementById("circle2").style.animationName = "about2";
-      body.style.overflow = "hidden";
-      console.log("animation active or is supposed to be active");
+      // body.style.overflow = "hidden";
+      // console.log("animation active or is supposed to be active");
       circle.style.visibility = "visible";
+      document.getElementById("texttexttext").innerHTML = "A b o u t";
 
       setTimeout(()=>{
         if (!documentation){
@@ -243,11 +253,15 @@ window.addEventListener("scroll", ()=>{
         spinny.style.visibility = "hidden";
         spinny.style.transform = "translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg)";
         document.getElementById('skrol').style.display = "block";
+        document.getElementById('skrol2').style.display = "block";
         document.getElementById("skrolText").style.display = "block";
       },500);
       document.getElementById("aboutText").style.animationDuration = "1.8s";
       document.getElementById("aboutText").style.animationDirection = "reverse";
       document.getElementById("aboutText").style.animationName="text";
+
+      console.log("aboutText reverse animation anicon 2");
+
       spinny.style.animationName="spinnyRev";
 
       cubest.style.visibility = "visible";
@@ -256,7 +270,7 @@ window.addEventListener("scroll", ()=>{
       cubeth.style.visibility = "visible";
       // circle.style.visibility = "visible";
 
-      body.style.overflow = "visible";
+      // body.style.overflow = "visible";
 
 
       containerst.style.animationName = "downstRev";
@@ -282,17 +296,15 @@ window.addEventListener("scroll", ()=>{
       // document.getElementById('skrol').style.animationName = "projects";
       // document.getElementById("skrolText").style.animationName = "projects";
 
-
         setTimeout(()=>{
           document.getElementById("aboutText").style.animationName = "";
           document.getElementById("aboutText").style.visibility = "hidden";
-          aniCon = 1;},3000);
-    }
+          console.log("aboutText hidden aniCon 2");
+        },500);
 
-    else {
-      {
-        console.log(" scroll animation not ready");
-      }
+        setTimeout(()=>{
+          aniCon = 1;
+        },1500);
     }
 });
 

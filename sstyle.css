@@ -6,7 +6,7 @@ body{
   background-color: #27476E;
   align-items: center;
   width: 100vw;
-  height: 103vh;
+  height: 100vh;
   position: absolute;
   /* overflow: scroll; */
 }
@@ -530,28 +530,44 @@ a{
 
 /* image pointing downwards */
 #skrol{
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   position: absolute;
   /* right: 0; */
   bottom: 0;
-  transform:  translateY(-5em);
+  /* transform: translateX(-5em); */
   visibility: hidden;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  right: 0;
+  transform: translateX(2.2em) translateY(-.5em);
+  /* animation: clickme1 1.5 linear infinite alternate; */
+}
+
+
+#skrol2{
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  /* right: 0; */
+  bottom: 0;
+  /* transform: translateX(-5em); */
+  /* visibility: hidden; */
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  right: 0;
+  transform: translateX(-9.2em) translateY(-.5em) rotateZ(180deg);
+  /* animation: clickme2 1.5 linear infinite alternate; */
 }
 
 .skrolText{ /*displays "about" under the arrow pointing down */
   position: absolute;
-  font-family: 'Jost', sans-serif;
-  transform: translateY(-1.2em);
+  transform: translateY(-3em);
   bottom: 0;
-  /* transform: translateY(5em); */
-  color: white;
   visibility: hidden;
   animation-duration: 1.5s;
-  font-size: 1.5em;
   animation-fill-mode: forwards;
+  /* display: inline-block; */
 }
 
 .docHint{ /*displays documentation on hover over the circle */
@@ -572,6 +588,15 @@ a{
   100%  {transform: translateY(-6em);}
 }
 
+@keyframes clickme1 {
+  0%    {transform: translateX(2.2em) translateY(-.5em); }
+  100%  {transform: translateX(2.8em) translateY(-.5em);}
+}
+
+@keyframes clickme2 {
+  0%    {transform: translateX(-9.2em) translateY(-.5em) rotateZ(180deg);}
+  100%  {transform: translateX(-9.8em) translateY(-.5em) rotateZ(180deg);}
+}
 
 
 /* container for the spinning cube */
@@ -592,6 +617,7 @@ a{
   bottom: 0;
   position: absolute;
   right: 0;
+  transform: translateY(-9em);
 }
 
 /* class for the icon images */
@@ -608,8 +634,30 @@ button{
   cursor: pointer;
 }
 
+.texttexttext{
+  width: 6em;
+  height: 2em;
+  background-color: #062A4C;
+  border-radius: 25px;
+  justify-self: center;
+  align-items: center;
+  display: grid;
+  font-family: 'Jost', sans-serif;
+  color: white;
+  transition: 0.5s;
+  font-size: 1.5em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.texttexttext:hover{
+    background-color: bisque;
+}
 
 @media (max-width: 768px){
  /* rewrite the css for what needs to change here */
+ .projects{
+   font-size: 4em;
+ }
 
 }
