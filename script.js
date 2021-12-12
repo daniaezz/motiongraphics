@@ -20,6 +20,7 @@ var documentation = false;
 window.addEventListener("load", ()=>{
   setTimeout( ()=>{ //timeout used so that the following only happens after inital animation is done
     circle.style.cursor="pointer";
+    document.getElementById("headings").style.visibility = "visible";
     document.getElementById("circle3").style.animationName = "shadow"; //makes the shadow for the circle start animating
     document.getElementById("projects").style.visibility = "visible"; //heading appears
     document.getElementById("projects").style.animationName = "projects";
@@ -155,6 +156,11 @@ document.getElementById("texttexttext").addEventListener("click", ()=>{
       document.getElementById("skrol2").style.display = "none";
       document.getElementById("skrol").style.display = "none";
       document.getElementById("texttexttext").innerHTML = "B a c k";
+
+      document.getElementById("headings").style.display = "none";
+      document.getElementById("docHint").style.display = "none";
+
+
       // document.getElementById("bouncy").style.visibility = "visible";
 
       // body.style.overflow="hidden";
@@ -220,6 +226,9 @@ document.getElementById("texttexttext").addEventListener("click", ()=>{
     else if (aniCon==2){
       // spinny.style.zIndex = "20";
       document.getElementById("circle2").style.visibility = "hidden";
+      document.getElementById("headings").style.display = "block";
+      document.getElementById("docHint").style.display = "block";
+
 
       document.getElementById("cubes").style.visibility = "visible";
       // document.getElementById("circle2").style.animationName = "about2";
@@ -377,3 +386,26 @@ document.getElementById("spinTheSpin").addEventListener("mousedown", function (e
 function hehe(){
   alert("dont call me >:(");
 }
+
+
+
+//for phones
+
+// const mobileChangeMediaQuery = window.matchMedia('(max-width: 768px)')
+//
+// function handleMobileChange(e) {
+//   // Check if the media query is true
+//   if (e.matches) {
+//     // Then log the following message to the console
+//     // console.log('Media Query Matched! Entered mobile size')
+//   }
+//   // else {
+//   //   if(sidenav.classList.contains("sidenav-open"))
+//   //     sidenav.classList.remove("sidenav-open");
+//   // }
+// }
+
+// // Register event listener
+// mobileChangeMediaQuery.addListener(handleMobileChange)
+// // Initial check
+// handleMobileChange(mobileChangeMediaQuery)

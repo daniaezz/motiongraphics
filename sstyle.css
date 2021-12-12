@@ -657,7 +657,7 @@ button{
  /* rewrite the css for what needs to change here */
  .projects{
    font-size: 1.5em;
-   transform: translateY(-6em);
+   transform: translateY(-7em);
  }
 
  .circle{
@@ -676,7 +676,7 @@ button{
  }
 
  .cube{
-   transform-origin: 0.7em 0.7em;
+   transform-origin: 0.5em 0.2em;
    width: 5em;
    height: 5em;
    display: grid;
@@ -742,28 +742,46 @@ button{
    color: white;
  }
 
- /* .mff{
+
+ .mff{
+   transform: translateY(-35em);
    visibility: visible;
+   position: absolute;
+   animation: head 3s;
  }
 
  .comix{
+   transform: translateY(-35em) translateX(28em);
    visibility: visible;
+   position: absolute;
+   animation: head 3s;
  }
 
  .sound{
+   transform: translateY(10em) ;
    visibility: visible;
+   position: absolute;
+   animation: head 3.5s;
  }
 
  .videoh{
+   transform: translateY(10em) translateX(28em);
    visibility: visible;
- } */
+   position: absolute;
+   animation: head 3s;
+ }
 
- /* .docHint{ */
-    /*displays documentation on hover over the circle */
-     /* transform: translateY(5em); */
-     /* rotateX(180deg) rotateY(180deg) */
-     /* font-size: 0.8em; */
-     /* visibility: visible; */
- /* } */
+@keyframes head {
+  0% {opacity: 0%;}
+  50% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+ .docHint{
+     transform: translateY(5em) rotateZ(180deg);
+     font-size: 0.8em;
+     visibility: visible;
+     animation: head 3s;
+
+ }
 
 }
