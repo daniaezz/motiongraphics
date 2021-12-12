@@ -3,14 +3,12 @@ body{
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* min-height: 500px; */
   background-color: #27476E;
-  /* height: 100.1vh; */
-  /* min-width: 1000px; */
+  align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 103vh;
   position: absolute;
+  /* overflow: scroll; */
 }
 
 a{
@@ -18,7 +16,6 @@ a{
 }
 
 .everything{
-  /* top: 0; */
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -37,8 +34,6 @@ a{
   align-items: center;
   justify-self: center;
   text-align: center;
-  /* bottom: 0; */
-  /* display: run-in; */
 }
 
 .text{
@@ -49,13 +44,6 @@ a{
   z-index: 2;
   font-size: 18px;
 }
-
-/* .ass1{ */
-  /* top:0px; */
-  /* left: 0px; */
-  /* text-align: left;
-  align-items: center;
-} */
 
 .circle{
   width: 9em;
@@ -70,9 +58,9 @@ a{
   z-index: 100;
 }
 
+/* .circle:hover{
 
-
-/* cube starts */
+} */
 
 .cube{
   transform-style: preserve-3d;
@@ -119,6 +107,7 @@ a{
 .six{
   transform: translate3d(0, 0, -3em);
   background-color: #ffb7b2;
+  z-index: -30;
 }
 
 .face{
@@ -136,17 +125,15 @@ a{
   user-select: none;
 }
 
+
 .containerst{
   display: grid;
   left: 200px;
   transform: scale(0);
   transition: 0.5s;
   position: absolute;
-  /* animation-name: first; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
-  /* -webkit-transform: translateZ(0); */
-  /* animation: downst 2s 8s; */
   z-index: 15;
 }
 
@@ -156,12 +143,11 @@ a{
   position: absolute;
   transform: scale(0);
   transition: 0.5s;
-  /* animation-name: second; */
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
-  /* -webkit-transform: translateZ(0); */
   z-index: 15;
 }
+
 
 .containerrd{
   display: grid;
@@ -169,10 +155,8 @@ a{
   position: absolute;
   transform: scale(0);
   transition: 0.5s;
-  /* animation-name: third; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
-  /* -webkit-transform: translateZ(0); */
   z-index: 15;
 }
 
@@ -182,21 +166,17 @@ a{
   position: absolute;
   transform: scale(0);
   transition: 0.5s;
-  /* animation-name: fourth; */
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
-  /* -webkit-transform: translateZ(0); */
-  /* transform: rotate3d(1, 1, 1, 90deg) */
   z-index: 15;
 }
 
+/* aka the shadow for the circle */
 #circle3{
   z-index: 1;
   opacity: 50%;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  /* background-color: #27476E; */
-  /* animation: shadow 1.5s 2.5s infinite; */
 }
 
 @keyframes shadow {
@@ -204,6 +184,7 @@ a{
   100%  {transform: scale(1.8); opacity: 0%;}
 }
 
+/* animations that start on load */
 @keyframes first {
   0%    {left: 200px;}
   50%   {left: 0px; top: 40%;}
@@ -228,33 +209,24 @@ a{
 
 /* cube and cube rotations */
 
+/*classes for the cubes, mainly to set the animations*/
 #cubest{
-  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
   transition: 0.5s;
-  /* animation-iteration-count: infin; */
-  /* animation-duration: 4s; */
-
   will-change: transform;
   animation-fill-mode: forwards;
   animation: cubest 4s, constantst 6s 4s infinite;
 }
 
 #cubend{
-  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
-  /* animation-iteration-count: infin; */
-  /* animation-duration: 4s; */
   will-change: transform;
   animation-fill-mode: forwards;
   animation: cubend 4s, constantnd 6s 4s infinite;
 }
 
 #cuberd{
-  /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
-  /* animation-iteration-count: infin; */
-  /* animation-duration: 2.75s; */
   will-change: transform;
   animation-fill-mode: forwards;
   animation: cuberd 2.75s, constantrd 6s 2.75s infinite;
@@ -263,13 +235,12 @@ a{
 #cubeth{
   /* -webkit-transform: rotate3d(0, 0, 0, 90deg); */
   transform: rotate3d(0, 0, 0, 90deg);
-  /* animation-iteration-count: infin; */
-  /* animation-duration: 2.75s; */
   will-change: transform;
   animation-fill-mode: forwards;
   animation: cubeth 2.75s, constantth 6s 2.75s infinite;
 }
 
+/* these animations play as the cubes appear */
 @keyframes cubest {
   0%    {transform: rotate3d(0, 0, 0, 10deg);}
   25%   {transform: rotate3d(1, 1, 1, 345deg);}
@@ -298,7 +269,7 @@ a{
   100%  {transform: rotate3d(2, 1, 1, -270deg);}
 }
 
-/* constant first */
+/* constant animations that will always be playing after inital animation*/
 @keyframes constantst {
   0%    {transform: rotate3d(1, 1, 1, 170deg);}
   22%   {transform: rotate3d(1, 1, 1, 242deg);}
@@ -335,40 +306,38 @@ a{
   100%  {transform: rotate3d(2, 1, 1, -630deg);}
 }
 
-
-/* #cubest:hover{
-  animation-play-state: paused;
-  transform: rotate3d(0,0,0, 0deg);
-} */
-
+/* circle2 is the circle that fills the bg for the documentation */
 #circle2{
     visibility: hidden;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    /* z-index: -10; */
+    will-change: background-color, scale;
 }
 
 #circle{
-  animation-duration: 0.5s;
+  animation-duration: 0.7s;
   animation-fill-mode: forwards;
   overflow: hidden;
 }
 
-@keyframes extendBg {
+
+@keyframes extendBg { /* extends circle2 to fill the bg when the circle is pressed*/
   0% {background-color: white; transform: scale(1.5);  z-index: -10;}
   100%  {background-color: #EF7A85; transform: scale(15); z-index: -10;}
 }
 
-@keyframes circle2Anim {
+@keyframes circle2Anim { /*need to rename this: it changes the bg of the circle in the middle when the button is pressed*/
   0% {background-color: white;}
   100% {background-color: #27476E;}
 }
 
-@keyframes circleBack {
+@keyframes circleBack { /*basically the reverse of the circle2anim*/
   0%  {background-color: #27476E;}
   100%  {background-color: white;}
 }
 
-@keyframes bgBack {
+@keyframes bgBack { /*basically the reverse of extendBg but almost completely removes circle 2*/
   0%   {background-color: #EF7A85; transform: scale(15); z-index: -10;}
   100% {background-color: white; transform: scale(0.1);  z-index: -10;}
 }
@@ -379,7 +348,7 @@ a{
   100%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
 }
 
-@keyframes about2 {
+@keyframes about2 { /*same as about but changes for the documentation screen instead*/
   0% {background-color: #27476E; transform: scale(1.5);  z-index: -10;}
   100%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
 }
@@ -389,13 +358,12 @@ a{
   0%    {background-color: #ACACDE; transform: scale(15); z-index: -10;}
   100%  {background-color: white; transform: scale(1);  z-index: 10;}
 }
-/*
-.first2{
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation: downst 3s 8s;
-} */
 
+@keyframes about2rev {
+  0%  {background-color: #ACACDE; transform: scale(15); z-index: -10;}
+  100% {background-color: #27476E; transform: scale(1);  z-index: 10;}
+}
+/* animation for cubes going down */
 @keyframes downst {
   0%    {transform: translateY(0px); left: 0px; top:0px; }
   100%  {transform: translateY(900px);left:0; top:0;}
@@ -436,7 +404,7 @@ a{
   100%  {transform: translateY(0px); right:0px; bottom:0;}
 }
 
-#spinny3d{
+#spinny3d{ /*the cube --> not its container*/
   width: 15em;
   height: 15em;
   transform-style: preserve-3d;
@@ -449,17 +417,19 @@ a{
   transition: 0.4s;
 }
 
+/* spinny spinny cube */
 @keyframes spinny {
   0%    {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
   100%  {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
 }
 
+/* rev animation for the cube that comes down with about, i should probably remove this and just set the animation direction to revrse but does it really matter? */
 @keyframes spinnyRev {
   0%    {transform: translateX(-18em) translateY(0em) rotateZ(360deg) rotate3d(0,0.1,1, 90deg);}
   100%  {transform: translateX(-18em) translateY(-30em)  rotateZ(130deg) rotate3d(0,0.1,1, 90deg);}
 }
 
-.face2{
+.face2{ /*for the spinny cube*/
   width: 15em;
   height: 15em;
   position: absolute;
@@ -474,33 +444,7 @@ a{
   user-select: none;
 }
 
-/* #bouncy{
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  background-color: black;
-  transform: translateX(-30em) translateY(-30em);
-  animation-fill-mode: forwards;
-  animation-duration: 2.5s;
-  animation-timing-function: ease-in;
-  animation-delay: 0.7s;
-  visibility: hidden;
-}
-*/
-/* @keyframes bouncy {
-  0%    {transform: translateX(-35em) translateY(-30em); height:6em; width: 5em;} /* up
-  10%   {transform: translateX(-35em) translateY(0); height:5em; width: 6em;} /* down
-  25%   {transform: translateX(-35em) translateY(-15em); height:6em; width: 5em;} /* up
-  26%   {transform: translateX(-35em) translateY(-15em); height:5em; width: 5em;}/* up
-  35%   {transform: translateX(-35em) translateY(0); height:5em;} /* down
-  50%   {transform: translateX(-35em) translateY(-10em); height:6em; width: 5em;} /* up
-  53%   {transform: translateX(-35em) translateY(-10em); height:5em; width: 5em;} /* up
-  62%   {transform: translateX(-35em) translateY(0); height:5em;} /* down
-  100%  {transform: translateX(-35em) translateY(0); height:5em;}
-}  */
-
-.aboutText{
-  /* font-size: 5em; */
+.aboutText{ /*contains all the text that shows up on about*/
   position: absolute;
   font-family: 'Jost', sans-serif;
   width: 50em;
@@ -509,55 +453,56 @@ a{
   animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
-  /* float: right; */
   visibility: hidden;
+  will-change: opacity;
 }
+
  p{
   text-align: left;
   font-size: 5em;
   padding: 0.2em;
   margin: 0;
-  /* opacity: 0; */
-   /* font-weight: none; */
  }
 
- .filler{
+ .filler{ /*about text marhaba*/
    text-align: left;
    padding: 1em;
    font-size: 1.5em;
    position: absolute;
-   /* opacity: 0; */
  }
 
+/* animates the text in the "about" page */
  @keyframes text {
    0% {opacity: 0%;}
    100% {opacity: 100%;}
  }
 
+/* idk  why i added classes specifically for animation but it makes sense to me */
  #projects{
    animation-duration: 0.5s;
    animation-fill-mode: forwards;
    visibility: hidden;
  }
 
+/* animates the text "projects" and "documentation" */
  @keyframes projects {
    0%  {opacity: 0%;}
    100% {opacity: 100%;}
  }
 
+/* contains the text "projects" */
  .projects{
    font-size: 2em;
    font-family: 'Jost', sans-serif;
    color: white;
    transform: translateY(-6em);
-   /* font-weight: bold; */
 }
 
+/* headings over cubes */
 .headings{
   font-size: 1.2em;
   font-family: 'Jost', sans-serif;
   color: white;
-  /* position: fixed; */
 }
 
 .mff{
@@ -584,86 +529,91 @@ a{
   position: absolute;
 }
 
-img{
+/* image pointing downwards */
+#skrol{
   width: 3em;
   height: 3em;
   position: absolute;
-  right: 0;
+  /* right: 0; */
   bottom: 0;
-  transform: translateX(-6em) translateY(-5em);
-  /* transform: translateX(10em); */
+  transform:  translateY(-5em);
   visibility: hidden;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 
-.skrolText{
+.skrolText{ /*displays "about" under the arrow pointing down */
   position: absolute;
   font-family: 'Jost', sans-serif;
-  /* transform: translateX(-3.2em) translateY(-1.5em);
-  right: 0;
-  bottom: 0; */
-  /* transform: translateY(5em);
+  transform: translateY(-1.2em);
+  bottom: 0;
+  /* transform: translateY(5em); */
   color: white;
   visibility: hidden;
   animation-duration: 1.5s;
   font-size: 1.5em;
-  animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
 }
 
-.docHint{
+.docHint{ /*displays documentation on hover over the circle */
     position: absolute;
     font-family: 'Jost', sans-serif;
-    /* transform: translateX(-3.2em) translateY(-1.5em);
-    right: 0;
-    bottom: 0; */
-    transform: translateY(6em);
+    transform: translateY(7em);
+    /* rotateX(180deg) rotateY(180deg) */
     color: white;
-    /* visibility: hidden; */
     animation-duration: 1.5s;
-    font-size: 1.3em;
+    font-size: 1.2em;
     animation-fill-mode: forwards;
+    visibility: hidden;
 }
 
+/* animates the img tha points downwards */
 @keyframes skrolImg {
-  0%    {transform: translateX(-6em) translateY(-5em);}
-  100%  {transform: translateX(-6em) translateY(-6em);}
-}
-.scrollhelp {
-  position: absolute;
-  height: 101%;
-  width: 1px;
-  z-index: -100;
+  0%    {transform: translateY(-5em);}
+  100%  {transform: translateY(-6em);}
 }
 
+
+
+/* container for the spinning cube */
 .spinTheSpin{
   transform-style: preserve-3d;
   transform-origin: -21em 5em;
   left: 0;
-  /* transform: translateX(-18em) translateY(0em); */
 }
 
-.back{
-  background-color: #91785D;
-  position: absolute;
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  transform: translateX(0em) translateY(15em);
-}
-
-.contact{
-  background-color: #869D7A;
-  position: absolute;
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  transform: translateX(18em) translateY(15em);
-}
-
-.duckroll{
+/* easter egg hehehehe */
+.aiyaiya{
   font-size: 5em;
   cursor: pointer;
-  /* text-decoration: none;
-  color: aqua; */
+}
+
+/* wrapper for the about me icons */
+.icons{
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* class for the icon images */
+.hehe{
+  padding-left: 2em;
+  padding-right: 2em;
+  display: inline-block;
+}
+
+/* call me button */
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+@media (max-width: 400px){
+ /* rewrite the css for what needs to change here */
+ .face{
+   width:8em;
+   height: 8em;
+ }
 }
