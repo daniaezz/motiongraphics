@@ -712,12 +712,12 @@ button{
 
  /* class for the icon images */
  .hehe{
-   padding-left: 0.4em;
-   padding-right: 0.4em;
+   padding-left: 0.3em;
+   padding-right: 0.3em;
  }
 
  .imghehe{
-   width: 2em;
+   width: 1.5em;
  }
 
  #spinny3d{ /*the cube --> not its container*/
